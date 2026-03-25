@@ -2,6 +2,7 @@ modLoader = "javafml"
 loaderVersion = "[47,)"
 #issueTrackerURL = ""
 license = "All Rights Reserved"
+logoFile="/assets/astral/icon.png"
 
 [[mods]]
 modId = "astral"

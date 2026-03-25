@@ -1,10 +1,7 @@
 package org.lightning323.astral.fabric;
 
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.world.item.Item;
-import org.lightning323.astral.AstralArmoury;
 import net.fabricmc.api.ModInitializer;
+import org.lightning323.astral.AstralArmoury;
 
 public final class AstralArmouryFabric implements ModInitializer {
 

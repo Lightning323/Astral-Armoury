@@ -37,7 +37,7 @@ dependencies {
  * ADDED DEPENDENCIES
  */
     //Include entity reach attributes because minecraft 1.20.1 does not have them
-    include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$entity_reach_attributes_version")
+//    include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$entity_reach_attributes_version")
     modImplementation("curse.maven:jei-238222:7391694")
 }
 
