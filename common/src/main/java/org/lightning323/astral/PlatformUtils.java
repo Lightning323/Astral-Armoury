@@ -1,6 +1,5 @@
 package org.lightning323.astral;
 
-import com.tterrag.registrate.Registrate;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 
@@ -22,8 +21,4 @@ public class PlatformUtils {
         throw new AssertionError();
     }
 
-    @ExpectPlatform
-    public static Registrate getRegistrate() {
-        throw new AssertionError();
-    }
 }

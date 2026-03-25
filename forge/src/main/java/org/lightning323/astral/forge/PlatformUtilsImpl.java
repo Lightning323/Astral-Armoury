@@ -1,9 +1,7 @@
 package org.lightning323.astral.forge;
 
-import com.tterrag.registrate.Registrate;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraftforge.common.ForgeMod;
-import org.lightning323.astral.AstralArmoury;
 
 import java.util.function.Supplier;
 

@@ -37,9 +37,12 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
-
-    //REGISTRATE
-    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+/**
+ * ADDED DEPENDENCIES
+ * https://discordapp.com/channels/752944675425353768/1050532463090335744/1486174926380597268
+ * modImplementation needs to be used in order to deobfuscate the dependency, (note the mod part)
+ */
+    modImplementation("curse.maven:jei-238222:7391695")
 }
 
 processResources {

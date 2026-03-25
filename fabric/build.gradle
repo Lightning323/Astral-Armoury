@@ -33,11 +33,12 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
-
+/**
+ * ADDED DEPENDENCIES
+ */
     //Include entity reach attributes because minecraft 1.20.1 does not have them
     include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$entity_reach_attributes_version")
-    //REGISTRATE
-    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
+    modImplementation("curse.maven:jei-238222:7391694")
 }
 
 processResources {

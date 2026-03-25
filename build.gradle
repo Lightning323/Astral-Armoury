@@ -12,17 +12,15 @@ allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
     repositories {
-        // Registrate
-        maven {
-            url = "https://maven.ithundxr.dev/mirror"
-        }
-
         //https://github.com/JamiesWhiteShirt/reach-entity-attributes/tree/1.20
         maven { //Entity reach attributes (Fabric does not have reach attributes on 1.20.1 only)
             url "https://maven.jamieswhiteshirt.com/libs-release"
             content {
                 includeGroup "com.jamieswhiteshirt"
             }
+        }
+        maven {
+            url "https://cursemaven.com"
         }
     }
 }
