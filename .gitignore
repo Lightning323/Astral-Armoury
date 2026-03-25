@@ -5,6 +5,7 @@ build
 common/build
 common/run
 common/.gradle
+common/src/main/generated/resources
 
 fabric/build
 fabric/run
