@@ -22,6 +22,10 @@ allprojects {
         maven {
             url "https://cursemaven.com"
         }
+        maven {
+            name = "Curios"
+            url = uri("https://maven.theillusivec4.top/")
+        }
     }
 }
 

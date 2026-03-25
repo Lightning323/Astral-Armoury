@@ -55,7 +55,17 @@ dependencies {
  * https://discordapp.com/channels/752944675425353768/1050532463090335744/1486174926380597268
  * modImplementation needs to be used in order to deobfuscate the dependency, (note the mod part)
  */
+    modRuntimeOnly("top.theillusivec4.curios:curios-forge:${curios_version}")
+    modCompileOnly("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+
     modImplementation("curse.maven:jei-238222:7391695")
+
+    //Cataclysm, mowzies mobs, deeperdarker and the aether
+////    modImplementation("curse.maven:lendercataclysm-551586:6906993")
+////    modImplementation("curse.maven:lionfish-api-1001614:5922047")
+//    modImplementation("curse.maven:mowzies-mobs-250498:6586086")
+//    modImplementation("curse.maven:deeperdarker-659011:5906086")
+    modImplementation("curse.maven:aether-255308:6134920")
 }
 
 processResources {

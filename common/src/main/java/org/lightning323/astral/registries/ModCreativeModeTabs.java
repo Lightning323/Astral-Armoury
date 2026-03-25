@@ -19,7 +19,7 @@ public class ModCreativeModeTabs {
     public static final RegistrySupplier<CreativeModeTab> ASTRAL_TAB = TABS.register(
             new ResourceLocation(AstralArmoury.MOD_ID, "astral_tab"),
             () -> CreativeTabRegistry.create(
-                    Component.translatable("itemGroup." + AstralArmoury.MOD_ID + ".test_tab"),
+                    Component.translatable("itemGroup." + AstralArmoury.MOD_ID + ".main"),
                     () -> new ItemStack(ModItems.CLAYMORE.get())
             )
     );
