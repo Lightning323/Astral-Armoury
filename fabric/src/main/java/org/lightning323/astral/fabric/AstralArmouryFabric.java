@@ -7,7 +7,6 @@ import org.lightning323.astral.AstralArmoury;
 import net.fabricmc.api.ModInitializer;
 
 public final class AstralArmouryFabric implements ModInitializer {
-    private static final Registrate FABRIC_REGISTRATE = Registrate.create(AstralArmoury.MOD_ID);
 
     @Override
     public void onInitialize() {
@@ -19,5 +18,4 @@ public final class AstralArmouryFabric implements ModInitializer {
         AstralArmoury.init();
     }
 
-    public static final ItemEntry<Item> SNOWFLAKE = FABRIC_REGISTRATE.item("snowflake", Item::new).register();
 }

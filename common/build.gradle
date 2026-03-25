@@ -10,3 +10,13 @@ dependencies {
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 }
+
+sourceSets {
+    main {
+        resources {
+            //Allows generated data to show up in forge and fabric
+            // This tells the IDE and the Game that this is a valid resource folder
+            srcDir 'src/main/generated/resources'
+        }
+    }
+}
