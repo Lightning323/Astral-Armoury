@@ -51,7 +51,7 @@ public class AstralItems {
     private static final int VANILLA_SHIELD_DURABILITY = 336;
 
 
-    //TODO: Figure out net.minecraft.client.renderer.Sheets loaded too early, modded registry-based materials may not work correctly
+    //TODO: we added suppliers for materials because of Figure out net.minecraft.client.renderer.Sheets loaded too early, modded registry-based materials may not work correctly
     public static final RegistrySupplier<Item> SHIELD_LEATHER = registerShield("shield_leather", "Leather Shield", () -> new AstralShieldItem(
             () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base")),
             () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base_nopattern")),
@@ -73,10 +73,15 @@ public class AstralItems {
     public static RegistrySupplier<Item> register(String id, String translation, Supplier<Item> itemSupplier) {
         RegistrySupplier<Item> register = ITEMS.<Item>register(AstralArmoury.resource(id), itemSupplier);
         if (translation == null) {
-            translation = String.join(" ", id.split("_"));
-            for (String piece : id.split("_")) {
-                translation += piece.substring(0, 1).toUpperCase() + piece.substring(1);
+            String[] s = id.split("_");
+            for (int i = 0; i < s.length; i++) {
+                if (s[i].length() > 1) {
+                    s[i] = s[i].substring(0, 1).toUpperCase() + s[i].substring(1).toLowerCase();
+                }else{
+                    s[i] = s[i].toUpperCase();
+                }
             }
+            translation = String.join(" ", s);
         }
         AstralArmoury.itemTranslations.put(register, translation);
         return register;

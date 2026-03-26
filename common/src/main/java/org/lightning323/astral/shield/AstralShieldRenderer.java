@@ -33,25 +33,27 @@ public class AstralShieldRenderer extends BlockEntityWithoutLevelRenderer {
     }
 
     public static void render(ShieldModel shieldModel, ItemStack itemStack, PoseStack poseStack, MultiBufferSource multiBufferSource, int light, int overlay) {
-        boolean bl = BlockItem.getBlockEntityData(itemStack) != null;
-        poseStack.pushPose();
-        poseStack.scale(1.0F, -1.0F, -1.0F);
-        Material material = ShieldMaterialHandler.getMaterial((AstralShieldItem) itemStack.getItem(), bl); //Shield base vs nopattern shield
+        if (itemStack.getItem() instanceof AstralShieldItem asi) {
+            boolean bl = BlockItem.getBlockEntityData(itemStack) != null;
+            poseStack.pushPose();
+            poseStack.scale(1.0F, -1.0F, -1.0F);
+            Material material = ShieldMaterialHandler.getMaterial(asi, bl); //Shield base vs nopattern shield
 
-        VertexConsumer vertexConsumer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(
-                multiBufferSource,
-                RenderType.entityCutoutNoCull(material.atlasLocation()),//shieldModel.renderType(material.atlasLocation()),
-                true,
-                itemStack.hasFoil()
-        ));
-        shieldModel.handle().render(poseStack, vertexConsumer, light, overlay, 1.0F, 1.0F, 1.0F, 1.0F);
-        if (bl) {
-            List<Pair<Holder<BannerPattern>, DyeColor>> list = BannerBlockEntity.createPatterns(ShieldItem.getColor(itemStack), BannerBlockEntity.getItemPatterns(itemStack));
-            BannerRenderer.renderPatterns(poseStack, multiBufferSource, light, overlay, shieldModel.plate(), material, false, list, itemStack.hasFoil());
-        } else {
-            shieldModel.plate().render(poseStack, vertexConsumer, light, overlay, 1.0F, 1.0F, 1.0F, 1.0F);
+            VertexConsumer vertexConsumer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(
+                    multiBufferSource,
+                    RenderType.entityCutoutNoCull(material.atlasLocation()),//shieldModel.renderType(material.atlasLocation()),
+                    true,
+                    itemStack.hasFoil()
+            ));
+            shieldModel.handle().render(poseStack, vertexConsumer, light, overlay, 1.0F, 1.0F, 1.0F, 1.0F);
+            if (bl) {
+                List<Pair<Holder<BannerPattern>, DyeColor>> list = BannerBlockEntity.createPatterns(ShieldItem.getColor(itemStack), BannerBlockEntity.getItemPatterns(itemStack));
+                BannerRenderer.renderPatterns(poseStack, multiBufferSource, light, overlay, shieldModel.plate(), material, false, list, itemStack.hasFoil());
+            } else {
+                shieldModel.plate().render(poseStack, vertexConsumer, light, overlay, 1.0F, 1.0F, 1.0F, 1.0F);
+            }
+
+            poseStack.popPose();
         }
-
-        poseStack.popPose();
     }
 }

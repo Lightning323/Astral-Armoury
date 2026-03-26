@@ -12,27 +12,27 @@ import java.util.function.Supplier;
 public class AstralShieldItem extends ShieldItem implements Equipable {
 
     public static final ResourceLocation BLOCKING = new ResourceLocation("minecraft:blocking");
-    private final Supplier<Material> baseSupplier, noPatternSupplier;
+//    private final Supplier<Material> baseSupplier, noPatternSupplier;
     private Material base, noPattern;
 
     public Material getBaseMaterial(){
-        if(base == null){
-            base = baseSupplier.get();
-        }
+//        if(base == null){
+//            base = baseSupplier.get();
+//        }
         return base;
     }
 
     public Material getNoPatternMaterial(){
-        if(noPattern == null){
-            noPattern = noPatternSupplier.get();
-        }
+//        if(noPattern == null){
+//            noPattern = noPatternSupplier.get();
+//        }
         return noPattern;
     }
 
     public AstralShieldItem(Supplier<Material> base, Supplier<Material> noPattern, Properties properties) {
         super(properties);
-        this.baseSupplier = base;
-        this.noPatternSupplier = noPattern;
+        this.base = base.get();
+        this.noPattern = noPattern.get();
     }
 
     @Override

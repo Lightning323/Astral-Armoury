@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.RegistrarManager;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import org.apache.logging.log4j.LogManager;
+import org.lightning323.astral.registries.AstralRecipes;
 import org.lightning323.astral.registries.ModCreativeModeTabs;
 import org.lightning323.astral.registries.AstralItems;
 import org.lightning323.astral.registries.AstralSounds;
@@ -30,6 +31,7 @@ public final class AstralArmoury {
         ModCreativeModeTabs.register();
         AstralItems.register();
         AstralSounds.register();
+        AstralRecipes.register();
     }
 
     public static void setupClient() {

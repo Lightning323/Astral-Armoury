@@ -1,14 +1,16 @@
 package org.lightning323.astral.forge.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import org.lightning323.astral.registries.AstralItems;
+import org.lightning323.astral.registries.AstralRecipes;
 
 import java.util.function.Consumer;
+
+import static org.lightning323.astral.AstralArmoury.MOD_ID;
 
 public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(PackOutput output) {
@@ -26,5 +28,11 @@ public class ModRecipeProvider extends RecipeProvider {
             .define('S', Items.STICK)
             .unlockedBy("has_iron", has(Items.IRON_INGOT))
             .save(writer);
+
+        SpecialRecipeBuilder.special(AstralRecipes.SHIELD_DECORATION.get())
+                .save(writer, ResourceLocation.fromNamespaceAndPath(MOD_ID, "shield_decoration").toString());
+
+//        SpecialRecipeBuilder.special(RecipeSerializer.SHIELD_DECORATION)
+//                .save(writer, ResourceLocation.fromNamespaceAndPath(MOD_ID, "shield_decoration").toString());
     }
 }

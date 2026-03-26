@@ -27,4 +27,6 @@ public final class AstralArmouryForge {
     static class ClientForgeEvents {
     }
 
+
+
 }

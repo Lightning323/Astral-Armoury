@@ -5,6 +5,7 @@ import net.minecraft.client.model.ShieldModel;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.*;
+import org.lightning323.astral.shield.AstralShieldItem;
 import org.lightning323.astral.shield.AstralShieldRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,7 +25,7 @@ public class BlockEntityWithoutLevelRendererMixin {
             cancellable = true
     )
     private void myMod$renderCustomShield(ItemStack itemStack, ItemDisplayContext context, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay, CallbackInfo ci) {
-        if (itemStack.getItem() instanceof ShieldItem) {//itemStack.is(ModItems.SHIELD_LEATHER.get())
+        if (itemStack.getItem() instanceof AstralShieldItem) {//itemStack.is(ModItems.SHIELD_LEATHER.get())
             AstralShieldRenderer.render(shieldModel, itemStack, poseStack, buffer, packedLight, packedOverlay);
             ci.cancel();
         }
