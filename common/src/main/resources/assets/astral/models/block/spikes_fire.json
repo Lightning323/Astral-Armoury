@@ -1,0 +1,10 @@
+{
+  "parent": "astral:parent/spikes_off",
+  "render_type": "cutout_mipped",
+  "textures": {
+    "side": "astral:block/spike/spikes_iron_side",
+    "base_up": "astral:block/spike/spikes_iron_base_up",
+    "down": "astral:block/spike/spikes_iron_base_down",
+    "particle": "astral:block/spike/spikes_iron_side"
+  }
+}

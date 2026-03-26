@@ -4,12 +4,16 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.lightning323.astral.AstralArmoury;
 
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = AstralArmoury.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -32,6 +36,17 @@ public class DataGenerators {
                 Registries.ITEM,                     // 2. ResourceKey (The "Item" Registry)
                 event.getLookupProvider(),           // 3. CompletableFuture
                 event.getExistingFileHelper()        // 4. ExistingFileHelper
+        ));
+
+        generator.addProvider(event.includeServer(), new LootTableProvider(
+                output,
+                Set.of(), // ResourceLocations of tables to skip validation for
+                List.of(
+                        new LootTableProvider.SubProviderEntry(
+                                ModBlockLootTables::new,
+                                LootContextParamSets.BLOCK
+                        )
+                )
         ));
     }
 }

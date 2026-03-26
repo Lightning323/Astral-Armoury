@@ -1,0 +1,7 @@
+{
+  "parent": "astral:parent/scaffold",
+  "textures": {
+    "all": "astral:block/scaffold_fragile",
+    "particle": "astral:block/scaffold_fragile"
+  }
+}

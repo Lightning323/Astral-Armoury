@@ -1,0 +1,7 @@
+{
+	"parent": "astral:parent/scaffold",
+	"textures": {
+		"all": "astral:block/scaffold_responsive",
+		"particle": "astral:block/scaffold_responsive"
+	}
+}

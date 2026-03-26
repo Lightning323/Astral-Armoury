@@ -2,6 +2,8 @@ package org.lightning323.astral.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -9,6 +11,10 @@ import org.lightning323.astral.AstralArmoury;
 
 @Mod(AstralArmoury.MOD_ID)
 public final class AstralArmouryForge {
+
+    static {
+        AstralArmoury.PLATFORM = new PlatformForge();
+    }
 
     public AstralArmouryForge() {
         // Submit our event bus to let Architectury API register our content on the right time.
@@ -27,6 +33,10 @@ public final class AstralArmouryForge {
     static class ClientForgeEvents {
     }
 
+//    @SubscribeEvent
+//    public static void gatherData(GatherDataEvent event) {
+//        ((PlatformForge) AstralArmoury.PLATFORM).isDataGen = true;
+//    }
 
 
 }

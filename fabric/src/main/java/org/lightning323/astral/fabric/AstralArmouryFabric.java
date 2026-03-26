@@ -5,6 +5,10 @@ import org.lightning323.astral.AstralArmoury;
 
 public final class AstralArmouryFabric implements ModInitializer {
 
+    static{
+        AstralArmoury.PLATFORM = new PlatformFabric();
+    }
+
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.

@@ -1,21 +1,28 @@
 package org.lightning323.astral.fabric;
 
 //import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
+
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import org.lightning323.astral.Platform;
 
 import java.util.function.Supplier;
 
-public class PlatformUtilsImpl {
+public class PlatformFabric implements Platform {
 
-    public static Supplier<Attribute> getEntityReach() {
+    @Override
+    public boolean isDataGen() {
+        return false;
+    }
+
+    public Supplier<Attribute> getEntityReach() {
         return () -> null;
     }
 
-    public static Supplier<Attribute> getBlockReach() {
+    public Supplier<Attribute> getBlockReach() {
         return () -> null;
     }
 
-    public static Supplier<Attribute> getStepHeight() {
+    public Supplier<Attribute> getStepHeight() {
         return () -> null;
     }
 }

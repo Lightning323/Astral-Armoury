@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.lightning323.astral.AstralArmoury;
+import org.lightning323.astral.GlowHelmet;
 import org.lightning323.astral.shield.AstralShieldItem;
 
 import java.util.ArrayList;
@@ -28,12 +29,43 @@ public class AstralItems {
     public static final List<RegistrySupplier<Item>> armor = new ArrayList<>();
 
     /**
+     * Items
+     */
+    public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    /**
      * Broadswords
      */
     public static final RegistrySupplier<Item> CLAYMORE = registerTool("claymore", null, () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GLOW_HELMET = registerArmor("glowing_helmet", () -> new GlowHelmet(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+
+    //Amethyst tools
+    public static final RegistrySupplier<Item> AMETHYST_SHOVEL = registerTool("amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, 0, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> AMETHYST_HOE = registerTool("amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, -1, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> AMETHYST_SWORD = registerTool("amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, 2, -2.9f, (new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))));
+    public static final RegistrySupplier<Item> AMETHYST_PICKAXE = registerTool("amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, 1, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> AMETHYST_AXE = registerTool("amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, 4, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
-     * Emerald armor tier
+     * Copper tier (1.20.1 - 1.21.9 only)
+     */
+    public static final RegistrySupplier<Item> COPPER_SHOVEL = registerTool("copper_shovel", () -> new ShovelItem(AstralToolTiers.COPPER, 1, -2.8f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_HOE = registerTool("copper_hoe", () -> new HoeItem(AstralToolTiers.COPPER, -1, -2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_SWORD = registerTool("copper_sword", () -> new SwordItem(AstralToolTiers.COPPER, 3, -2.4f, (new Item.Properties()).arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_PICKAXE = registerTool("copper_pickaxe", () -> new PickaxeItem(AstralToolTiers.COPPER, 1, -2.8f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_AXE = registerTool("copper_axe", () -> new AxeItem(AstralToolTiers.COPPER, 7, -3.4f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    public static final RegistrySupplier<Item> COPPER_BOOTS = registerArmor("copper_boots",null, () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_HELMET = registerArmor("copper_helmet", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistrySupplier<Item> COPPER_CHESTPLATE = registerArmor("copper_chestplate", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> COPPER_LEGGINGS = registerArmor("copper_leggings", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    /**
+     * Emerald tier
      */
     public static final RegistrySupplier<Item> EMERALD_BOOTS = registerArmor("emerald_boots", null, () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> EMERALD_HELMET = registerArmor("emerald_helmet", null, () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
@@ -45,6 +77,14 @@ public class AstralItems {
     public static final RegistrySupplier<Item> EMERALD_SWORD = registerTool("emerald_sword", null, () -> new SwordItem(AstralToolTiers.EMERALD, 5, -2.1f, (new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))));
     public static final RegistrySupplier<Item> EMERALD_PICKAXE = registerTool("emerald_pickaxe", null, () -> new PickaxeItem(AstralToolTiers.EMERALD, 1, -2.8f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> EMERALD_AXE = registerTool("emerald_axe", null, () -> new AxeItem(AstralToolTiers.EMERALD, 6, -3, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    /**
+     * Blocks
+     */
+    public static final RegistrySupplier<Item> SPIKES_IRON = register("spikes_iron", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> SPIKES_CURSE = register("spikes_curse", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> SPIKES_FIRE = register("spikes_fire", () -> new BlockItem(AstralBlocks.SPIKES_FIRE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
 
     //Shields (Basically just regular shields with more durability)
     //A vanilla shield has 336 durability
@@ -70,6 +110,10 @@ public class AstralItems {
             new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
+    public static RegistrySupplier<Item> register(String id, Supplier<Item> itemSupplier){
+        return register(id, null, itemSupplier);
+    }
+
     public static RegistrySupplier<Item> register(String id, String translation, Supplier<Item> itemSupplier) {
         RegistrySupplier<Item> register = ITEMS.<Item>register(AstralArmoury.resource(id), itemSupplier);
         if (translation == null) {
@@ -87,10 +131,28 @@ public class AstralItems {
         return register;
     }
 
+    public static RegistrySupplier<Item> registerBasicItem(String id, Supplier<Item> itemSupplier){
+        return registerBasicItem(id, null, itemSupplier);
+    }
+
+    public static RegistrySupplier<Item> registerBasicItem(String id, String translation, Supplier<Item> itemSupplier){
+        RegistrySupplier<Item> register = register(id, translation, itemSupplier);
+        basicItems.add(register);
+        return register;
+    }
+
+    public static RegistrySupplier<Item> registerTool(String id, Supplier<Item> itemSupplier){
+        return registerTool(id, null, itemSupplier);
+    }
+
     public static RegistrySupplier<Item> registerTool(String id, String translation, Supplier<Item> itemSupplier) {
         RegistrySupplier<Item> register = register(id, translation, itemSupplier);
         tools.add(register);
         return register;
+    }
+
+    public static RegistrySupplier<Item> registerArmor(String id, Supplier<Item> itemSupplier){
+        return registerArmor(id, null, itemSupplier);
     }
 
     public static RegistrySupplier<Item> registerArmor(String id, String translation, Supplier<Item> itemSupplier) {
