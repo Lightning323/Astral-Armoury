@@ -23,8 +23,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
 
         for (RegistrySupplier<Item> tool : AstralItems.tools) {
+            //Some items have custom resource locations
             withExistingParent(tool.getId().getPath(), "item/handheld")
-                    .texture("layer0", modLoc("item/" + tool.getId().getPath()));
+                    .texture("layer0", itemResource(tool));
         }
 
         for (RegistrySupplier<Item> armor : AstralItems.armor) {
@@ -34,6 +35,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         for (RegistrySupplier<Item> shield : AstralItems.shields) {
             shieldItem(shield);
         }
+    }
+
+    private ResourceLocation itemResource(RegistrySupplier<Item> item) {
+        ResourceLocation texture = modLoc("item/" + item.getId().getPath());
+        String resource = AstralItems.customTextureLocations.get(item);
+        if (resource != null) {
+            texture = modLoc("item/" + resource);
+        }
+        return texture;
     }
 
     private void shieldItem(RegistrySupplier<Item> shield) {
@@ -61,13 +71,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated"))
                 .texture("layer0",
-                        new ResourceLocation(AstralArmoury.MOD_ID, "item/" + item.getId().getPath()));
+                        itemResource(item)
+                );
     }
 
-    private void handheldItem(RegistryObject<Item> item) {
+    private void handheldItem(RegistrySupplier<Item> item) {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld"))
                 .texture("layer0",
-                        new ResourceLocation(AstralArmoury.MOD_ID, "item/" + item.getId().getPath()));
+                        itemResource(item)
+                );
     }
 }

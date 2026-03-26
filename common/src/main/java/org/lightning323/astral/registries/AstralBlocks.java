@@ -5,6 +5,8 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import org.lightning323.astral.AstralArmoury;
+import org.lightning323.astral.blocks.angelScaffolding.BlockScaffolding;
+import org.lightning323.astral.blocks.angelScaffolding.BlockScaffoldingResponsive;
 import org.lightning323.astral.blocks.spikes.EnumSpikeType;
 import org.lightning323.astral.blocks.spikes.SpikesBlock;
 
@@ -18,8 +20,8 @@ public class AstralBlocks {
     public static final List<RegistrySupplier<Block>> allBlocks = new ArrayList<>();
     public static final List<RegistrySupplier<Block>> lootDropSelf = new ArrayList<>();
 
-//    public static final RegistryObject<Block> SCAFFOLD_FRAGILE = BLOCKS.register("scaffold_fragile", () -> new BlockScaffolding(Block.Properties.of(), true));
-//    public static final RegistryObject<Block> SCAFFOLD_RESPONSIVE = BLOCKS.register("scaffold_responsive", () -> new BlockScaffoldingResponsive(Block.Properties.of(), false));
+    public static final RegistrySupplier<Block> SCAFFOLD_FRAGILE = registerBlock("scaffold_fragile", () -> new BlockScaffolding(Block.Properties.of(), true));
+    public static final RegistrySupplier<Block> SCAFFOLD_RESPONSIVE = registerBlock("scaffold_responsive", () -> new BlockScaffoldingResponsive(Block.Properties.of(), false));
 
     public static final RegistrySupplier<Block> SPIKES_IRON = registerBlock("spikes_iron", () -> new SpikesBlock(Block.Properties.of(), EnumSpikeType.PLAIN));
     public static final RegistrySupplier<Block> SPIKES_FIRE = registerBlock("spikes_fire", () -> new SpikesBlock(Block.Properties.of(), EnumSpikeType.FIRE));
