@@ -12,6 +12,7 @@ import org.lightning323.astral.registries.SoundRegistry;
 import org.lightning323.astral.shield.AstralShieldRenderer;
 import org.lightning323.astral.shield.MaterialShieldRegistry;
 import org.apache.logging.log4j.Logger;
+
 import java.util.function.Supplier;
 
 public final class AstralArmoury {
@@ -29,13 +30,11 @@ public final class AstralArmoury {
         SoundRegistry.register();
     }
 
-    public static ResourceLocation resource(String emeraldBoots) {
-        return new ResourceLocation(MOD_ID, emeraldBoots);
-    }
-
-    public static AstralShieldRenderer shieldRenderer;
-
     public static void setupClient() {
         MaterialShieldRegistry.init();
+    }
+
+    public static ResourceLocation resource(String emeraldBoots) {
+        return new ResourceLocation(MOD_ID, emeraldBoots);
     }
 }
