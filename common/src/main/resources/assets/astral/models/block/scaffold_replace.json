@@ -1,8 +1,0 @@
-{
-	"parent": "astral:parent/scaffold",
-
-	"textures": {
-		"all": "astral:block/scaffold_replace",
-		"particle": "astral:block/scaffold_replace"
-	}
-}
