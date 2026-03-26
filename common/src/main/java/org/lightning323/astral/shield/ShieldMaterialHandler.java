@@ -7,7 +7,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.item.Item;
-import org.lightning323.astral.registries.ModItems;
+import org.lightning323.astral.registries.AstralItems;
 
 @Environment(EnvType.CLIENT)
 public class ShieldMaterialHandler {
@@ -17,7 +17,7 @@ public class ShieldMaterialHandler {
         ClampedItemPropertyFunction blockFn = (stack, world, entity, seed) ->
                 entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F;
 
-        for (RegistrySupplier<Item> shield : ModItems.shields) {
+        for (RegistrySupplier<Item> shield : AstralItems.shields) {
             ItemPropertiesRegistry.register(
                     shield.get(), AstralShieldItem.BLOCKING, blockFn
             );
@@ -26,6 +26,6 @@ public class ShieldMaterialHandler {
 
     public static Material getMaterial(AstralShieldItem item, boolean isBanner) {
 //        Material rendermaterial = isBanner ? ModelBakery.SHIELD_BASE : ModelBakery.NO_PATTERN_SHIELD; //Default values
-        return isBanner ? item.base : item.noPattern;
+        return isBanner ? item.getBaseMaterial() : item.getNoPatternMaterial();
     }
 }

@@ -6,7 +6,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
-import org.lightning323.astral.registries.ModItems;
+import org.lightning323.astral.registries.AstralItems;
 
 import java.util.function.Consumer;
 
@@ -18,7 +18,7 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> writer) {
         // Simple 1.20.1 Recipe for your Claymore
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CLAYMORE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AstralItems.CLAYMORE.get())
             .pattern("I")
             .pattern("I")
             .pattern("S")

@@ -1,7 +1,6 @@
 package org.lightning323.astral.registries;
 
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
@@ -14,7 +13,7 @@ import net.minecraft.world.item.ArmorMaterials;
 import static org.lightning323.astral.AstralArmoury.MOD_ID;
 
 //net.minecraft.world.item.ArmorMaterials
-public enum ModArmorMaterials implements ArmorMaterial {
+public enum AstralArmorMaterials implements ArmorMaterial {
 
 //    //Glow
 //    GLOWING_ARMOR("glowing", 35, // durability
@@ -46,7 +45,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
                     ArmorMaterials.IRON.getDefenseForType(ArmorItem.Type.LEGGINGS),// leggings
                     ArmorMaterials.IRON.getDefenseForType(ArmorItem.Type.BOOTS), // boots
             }, 35, // enchantability
-            SoundRegistry.EQUIP_EMERALD.get(), // equip sound
+            AstralSounds.EQUIP_EMERALD.get(), // equip sound
             0.25F, // toughness
             0.2F, // knockback resistance
             () -> Ingredient.of(Items.EMERALD_BLOCK)); // repair material
@@ -62,7 +61,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = new int[]{11, 16, 16, 13};
 
-    ModArmorMaterials(String name, int durability, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    AstralArmorMaterials(String name, int durability, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durability;
         this.protectionAmounts = protectionAmounts;

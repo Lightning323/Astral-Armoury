@@ -6,17 +6,33 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ShieldItem;
 
+import java.util.function.Supplier;
+
 //Items are singletons
 public class AstralShieldItem extends ShieldItem implements Equipable {
 
-
     public static final ResourceLocation BLOCKING = new ResourceLocation("minecraft:blocking");
-    public final Material base, noPattern;
+    private final Supplier<Material> baseSupplier, noPatternSupplier;
+    private Material base, noPattern;
 
-    public AstralShieldItem(Material base, Material noPattern, Properties properties) {
+    public Material getBaseMaterial(){
+        if(base == null){
+            base = baseSupplier.get();
+        }
+        return base;
+    }
+
+    public Material getNoPatternMaterial(){
+        if(noPattern == null){
+            noPattern = noPatternSupplier.get();
+        }
+        return noPattern;
+    }
+
+    public AstralShieldItem(Supplier<Material> base, Supplier<Material> noPattern, Properties properties) {
         super(properties);
-        this.base = base;
-        this.noPattern = noPattern;
+        this.baseSupplier = base;
+        this.noPatternSupplier = noPattern;
     }
 
     @Override

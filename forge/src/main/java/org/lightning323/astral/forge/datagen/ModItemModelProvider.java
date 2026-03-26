@@ -9,7 +9,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import org.lightning323.astral.AstralArmoury;
-import org.lightning323.astral.registries.ModItems;
+import org.lightning323.astral.registries.AstralItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -18,33 +18,24 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        // This creates: assets/astral_armoury/models/item/claymore.json
-        // It assumes your texture is at: assets/astral_armoury/textures/item/claymore.png
-//        basicItem(ModItems.CLAYMORE.get());
-        withExistingParent(ModItems.CLAYMORE.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.CLAYMORE.getId().getPath()));
-        // Inside registerModels()
-        withExistingParent(ModItems.EMERALD_AXE.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.EMERALD_AXE.getId().getPath()));
-        withExistingParent(ModItems.EMERALD_SWORD.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.EMERALD_SWORD.getId().getPath()));
-        withExistingParent(ModItems.EMERALD_PICKAXE.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.EMERALD_PICKAXE.getId().getPath()));
-        withExistingParent(ModItems.EMERALD_SHOVEL.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.EMERALD_SHOVEL.getId().getPath()));
-        withExistingParent(ModItems.EMERALD_HOE.getId().getPath(), "item/handheld")
-                .texture("layer0", modLoc("item/" + ModItems.EMERALD_HOE.getId().getPath()));
+        for (RegistrySupplier<Item> basicItem : AstralItems.basicItems) {
+            basicItem(basicItem.get());
+        }
 
-        simpleArmorItem(ModItems.EMERALD_HELMET);
-        simpleArmorItem(ModItems.EMERALD_CHESTPLATE);
-        simpleArmorItem(ModItems.EMERALD_LEGGINGS);
-        simpleArmorItem(ModItems.EMERALD_BOOTS);
+        for (RegistrySupplier<Item> tool : AstralItems.tools) {
+            withExistingParent(tool.getId().getPath(), "item/handheld")
+                    .texture("layer0", modLoc("item/" + tool.getId().getPath()));
+        }
 
-        shieldItem(ModItems.SHIELD_LEATHER);
-        shieldItem(ModItems.SHIELD_OBSIDIAN);
-        shieldItem(ModItems.SHIELD_NETHERITE);
+        for (RegistrySupplier<Item> armor : AstralItems.armor) {
+            simpleArmorItem(armor);
+        }
 
+        for (RegistrySupplier<Item> shield : AstralItems.shields) {
+            shieldItem(shield);
+        }
     }
+
     private void shieldItem(RegistrySupplier<Item> shield) {
         String name = shield.getId().getPath();
 

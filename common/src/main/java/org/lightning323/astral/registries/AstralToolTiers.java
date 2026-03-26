@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 import static org.lightning323.astral.AstralArmoury.MOD_ID;
 
-public enum MyCustomTiers implements Tier {
+public enum AstralToolTiers implements Tier {
     COPPER(200, Tiers.IRON.getSpeed(), 1.0F, 8,
             () -> Ingredient.of(Items.COPPER_INGOT), "needs_copper_tool"),
 
@@ -31,7 +31,7 @@ public enum MyCustomTiers implements Tier {
     private final Supplier<Ingredient> repairIngredient;
     private final TagKey<Block> tag;
 
-    MyCustomTiers(int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient, String tagName) {
+    AstralToolTiers(int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient, String tagName) {
         this.uses = uses;
         this.speed = speed;
         this.damage = damage;
