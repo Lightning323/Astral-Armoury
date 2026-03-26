@@ -44,7 +44,7 @@ public class LightningStaffItem extends Item {
 //    }
 
 
-    private void summonLightning(Level level, BlockPos pos, LivingEntity attacker) {
+    public void summonLightning(Level level, BlockPos pos, LivingEntity attacker) {
         if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
             LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(level);
             if (bolt != null) {
@@ -65,39 +65,9 @@ public class LightningStaffItem extends Item {
         }
     }
 
-    /**
-     * 1. Trigger when left-clicking a MOB
-     */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         this.summonLightning(attacker.level(), target.blockPosition(), attacker);
         return super.hurtEnemy(stack, target, attacker);
     }
-//
-//    @Override
-//    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, Player player) {
-//        if (!player.level().isClientSide) {
-//            this.summonLightning(player.level(), pos, player);
-//        }
-//        // Return false so the block actually breaks/mines normally
-//        return false;
-//    }
-
-
-
-//    @Override
-//    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-//        Level level = attacker.level();
-//
-//        // Only spawn lightning on the server side to prevent "ghost" lighting
-//        if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
-//            BlockPos pos = target.blockPosition();
-//
-//            // Create the lightning bolt entity
-//            EntityType.LIGHTNING_BOLT.spawn(serverLevel, (ItemStack) null, null, pos,
-//                    MobSpawnType.TRIGGERED, true, true);
-//        }
-//
-//        return super.hurtEnemy(stack, target, attacker);
-//    }
 }
