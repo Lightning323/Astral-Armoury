@@ -126,20 +126,22 @@ public class SpikesBlock extends Block implements SimpleWaterloggedBlock {
 
   @Override
   public void neighborChanged(BlockState state, Level world, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-    if (state.getValue(ACTIVATED).booleanValue() == false && world.hasNeighborSignal(pos)) {
-      world.setBlockAndUpdate(pos, state.setValue(ACTIVATED, true));
+    int signalStrength = world.getBestNeighborSignal(pos);
+    int threshold = 1; // Your 'X' value
+
+    boolean shouldBeActive = signalStrength >= threshold;
+    boolean currentlyActive = state.getValue(ACTIVATED);
+
+    if (shouldBeActive != currentlyActive) {
+      world.setBlock(pos, state.setValue(ACTIVATED, shouldBeActive), 3);
+
       if (!world.isClientSide) {
-        //playSoundFromServer
-        AstralSounds.playSoundFromServer((ServerLevel) world, pos, AstralSounds.SPIKES_ON.get());
+        var sound = shouldBeActive ? AstralSounds.SPIKES_ON.get() : AstralSounds.SPIKES_OFF.get();
+        AstralSounds.playSoundFromServer((ServerLevel) world, pos, sound);
       }
     }
-    else if (state.getValue(ACTIVATED).booleanValue() && world.hasNeighborSignal(pos) == false) {
-      world.setBlockAndUpdate(pos, state.setValue(ACTIVATED, false));
-      if (!world.isClientSide) {
-        AstralSounds.playSoundFromServer((ServerLevel) world, pos, AstralSounds.SPIKES_OFF.get());
-      }
-    }
-    super.neighborChanged(state, world, pos, blockIn, fromPos, isMoving);
+    // No need for super.neighborChanged here for basic blocks,
+    // but keeping it doesn't hurt.
   }
 
   @Override
