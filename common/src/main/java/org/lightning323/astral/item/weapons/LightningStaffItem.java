@@ -1,0 +1,103 @@
+package org.lightning323.astral.item.weapons;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+
+public class LightningStaffItem extends Item {
+
+    final static int cooldownSec = 5;
+
+    public LightningStaffItem(Properties properties) {
+        super(properties);
+    }
+
+//    @Override
+//    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+//        ItemStack itemstack = player.getItemInHand(interactionHand);
+//        BlockHitResult raytraceresult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
+//
+//        if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
+//            if (raytraceresult.getType() == HitResult.Type.BLOCK || raytraceresult.getType() == HitResult.Type.ENTITY) {
+//                BlockPos pos = raytraceresult.getBlockPos();
+//                summonLightning(level, pos, player);
+//                player.getCooldowns().addCooldown(this, 20 * cooldownSec);
+//
+//                return InteractionResultHolder.success(itemstack);
+//            }
+//        }
+//
+//        return InteractionResultHolder.pass(itemstack);
+//    }
+
+
+    private void summonLightning(Level level, BlockPos pos, LivingEntity attacker) {
+        if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
+            LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(level);
+            if (bolt != null) {
+                bolt.moveTo(Vec3.atBottomCenterOf(pos));
+
+                // Safety: If the player is too close, make it visual-only
+                // so they don't die from their own power.
+                if (attacker.distanceToSqr(Vec3.atCenterOf(pos)) < 9.0D) {
+                    bolt.setVisualOnly(true);
+                }
+
+                if (attacker instanceof ServerPlayer sPlayer) {
+                    bolt.setCause(sPlayer);
+                }
+
+                serverLevel.addFreshEntity(bolt);
+            }
+        }
+    }
+
+    /**
+     * 1. Trigger when left-clicking a MOB
+     */
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        this.summonLightning(attacker.level(), target.blockPosition(), attacker);
+        return super.hurtEnemy(stack, target, attacker);
+    }
+//
+//    @Override
+//    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, Player player) {
+//        if (!player.level().isClientSide) {
+//            this.summonLightning(player.level(), pos, player);
+//        }
+//        // Return false so the block actually breaks/mines normally
+//        return false;
+//    }
+
+
+
+//    @Override
+//    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+//        Level level = attacker.level();
+//
+//        // Only spawn lightning on the server side to prevent "ghost" lighting
+//        if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
+//            BlockPos pos = target.blockPosition();
+//
+//            // Create the lightning bolt entity
+//            EntityType.LIGHTNING_BOLT.spawn(serverLevel, (ItemStack) null, null, pos,
+//                    MobSpawnType.TRIGGERED, true, true);
+//        }
+//
+//        return super.hurtEnemy(stack, target, attacker);
+//    }
+}

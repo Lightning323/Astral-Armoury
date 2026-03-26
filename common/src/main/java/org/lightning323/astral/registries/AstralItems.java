@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.lightning323.astral.AstralArmoury;
 import org.lightning323.astral.item.shield.AstralShieldItem;
-import org.lightning323.astral.item.weapons.LightningSwordItem;
+import org.lightning323.astral.item.weapons.LightningStaffItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,15 +56,15 @@ public class AstralItems {
 
 
     public static final RegistrySupplier<Item> LIGHTS_BANE = registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     //Staffs
-    public static final RegistrySupplier<Item> FROST_STAFF = registerBasicTool("frost_staff", null, "swords/frost_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> AQUA_STAFF = registerBasicTool("aqua_staff", null, "swords/aqua_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> EMERALD_STAFF = registerBasicTool("emerald_staff", null, "swords/emerald_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerBasicTool("diamond_staff", null, "swords/diamond_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningSwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> FROST_STAFF = registerBasicTool("frost_staff", null, "swords/frost_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> AQUA_STAFF = registerBasicTool("aqua_staff", null, "swords/aqua_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> EMERALD_STAFF = registerBasicTool("emerald_staff", null, "swords/emerald_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerBasicTool("diamond_staff", null, "swords/diamond_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningStaffItem(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
@@ -145,8 +145,8 @@ public class AstralItems {
     public static final RegistrySupplier<Item> SPIKES_IRON = register("spikes_iron", "Iron Spikes", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> SPIKES_CURSE = register("spikes_curse", "Cursed Spikes", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> SPIKES_FIRE = register("spikes_fire", "Hot Spikes", () -> new BlockItem(AstralBlocks.SPIKES_FIRE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
 
     /**
@@ -162,21 +162,21 @@ public class AstralItems {
 
     //TODO: we added suppliers for materials because of Figure out net.minecraft.client.renderer.Sheets loaded too early, modded registry-based materials may not work correctly
     public static final RegistrySupplier<Item> SHIELD_LEATHER = registerShield("shield_leather", "Leather Shield", () -> new AstralShieldItem(
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base")),
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base_nopattern")),
+            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base")),
+            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base_nopattern")),
             new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
     public static final RegistrySupplier<Item> SHIELD_OBSIDIAN = registerShield("shield_obsidian", "Obsidian Shield", () -> new AstralShieldItem(
             () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/obsidian_base")),
             () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/obsidian_base_nopattern")),
-            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
+            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 8)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
     public static final RegistrySupplier<Item> SHIELD_NETHERITE = registerShield("shield_netherite", "Netherite Shield", () -> new AstralShieldItem(
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base")),
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base_nopattern")),
-            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
+            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base")),
+            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base_nopattern")),
+            new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
     public static RegistrySupplier<Item> register(String id, Supplier<Item> itemSupplier) {
