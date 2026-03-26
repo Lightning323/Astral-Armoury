@@ -1,4 +1,4 @@
-package org.lightning323.astral.item.sword;
+package org.lightning323.astral.item.weapons;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

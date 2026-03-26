@@ -61,6 +61,8 @@ dependencies {
 
     modImplementation("curse.maven:jei-238222:7391695")
 
+//    modImplementation("curse.maven:geckolib-388172:6658942")
+
     //Cataclysm, mowzies mobs, deeperdarker and the aether
 ////    modImplementation("curse.maven:lendercataclysm-551586:6906993")
 ////    modImplementation("curse.maven:lionfish-api-1001614:5922047")

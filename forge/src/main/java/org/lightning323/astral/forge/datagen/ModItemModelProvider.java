@@ -7,7 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 import org.lightning323.astral.AstralArmoury;
 import org.lightning323.astral.registries.AstralItems;
 
@@ -18,22 +17,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        for (RegistrySupplier<Item> basicItem : AstralItems.basicItems) {
-            basicItem(basicItem.get());
+        for (RegistrySupplier<Item> item : AstralItems.basicItems) {
+            if (!hasCustomModel(item)) basicItem(item.get());
         }
-
-        for (RegistrySupplier<Item> tool : AstralItems.tools) {
-            //Some items have custom resource locations
-            withExistingParent(tool.getId().getPath(), "item/handheld")
-                    .texture("layer0", itemResource(tool));
+        for (RegistrySupplier<Item> item : AstralItems.tools) {
+            if (!hasCustomModel(item)) handheldItem(item);
         }
-
-        for (RegistrySupplier<Item> armor : AstralItems.armor) {
-            simpleArmorItem(armor);
+        for (RegistrySupplier<Item> item : AstralItems.armor) {
+            if (!hasCustomModel(item)) simpleArmorItem(item);
         }
-
-        for (RegistrySupplier<Item> shield : AstralItems.shields) {
-            shieldItem(shield);
+        for (RegistrySupplier<Item> item : AstralItems.shields) {
+            if (!hasCustomModel(item)) shieldItem(item);
         }
     }
 
@@ -45,6 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
         return texture;
     }
+
 
     private void shieldItem(RegistrySupplier<Item> shield) {
         String name = shield.getId().getPath();
@@ -75,11 +70,17 @@ public class ModItemModelProvider extends ItemModelProvider {
                 );
     }
 
-    private void handheldItem(RegistrySupplier<Item> item) {
-        withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld"))
-                .texture("layer0",
-                        itemResource(item)
-                );
+    private boolean hasCustomModel(RegistrySupplier<Item> item) {
+        String name = item.getId().getPath();
+        ResourceLocation customModelLoc = modLoc("item/" + name);
+        return existingFileHelper.exists(customModelLoc, net.minecraft.server.packs.PackType.CLIENT_RESOURCES, ".json", "models");
     }
+
+    private void handheldItem(RegistrySupplier<Item> item) {
+        String name = item.getId().getPath();
+        withExistingParent(name, mcLoc("item/handheld"))
+                .texture("layer0", itemResource(item));
+    }
+
+
 }

@@ -8,9 +8,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.lightning323.astral.AstralArmoury;
-import org.lightning323.astral.GlowHelmet;
 import org.lightning323.astral.item.shield.AstralShieldItem;
-import org.lightning323.astral.item.sword.LightningSwordItem;
+import org.lightning323.astral.item.weapons.LightningSwordItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +31,13 @@ public class AstralItems {
     public static final HashMap<RegistrySupplier<Item>, String> customTextureLocations = new HashMap<>();
 
     /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      * Items
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      */
     public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
@@ -40,30 +45,49 @@ public class AstralItems {
     public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
-     * Broadswords
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * Weapons
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      */
+
+
     public static final RegistrySupplier<Item> LIGHTS_BANE = registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
-
-
-
-    /**
-     * Staffs
-     */
+    //Staffs
     public static final RegistrySupplier<Item> FROST_STAFF = registerBasicTool("frost_staff", null, "swords/frost_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> AQUA_STAFF = registerBasicTool("aqua_staff", null, "swords/aqua_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> EMERALD_STAFF = registerBasicTool("emerald_staff", null, "swords/emerald_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> DIAMOND_STAFF = registerBasicTool("diamond_staff", null, "swords/diamond_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningSwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
-
+    /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * Armor
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     */
     //Glow helmet
-    public static final RegistrySupplier<Item> GLOW_HELMET = registerArmor("glowing_helmet", () -> new GlowHelmet(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> GLOW_HELMET = registerArmor("glowing_helmet", () -> new GlowHelmet(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
 
-    //Amethyst tools
+    /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * Vanilla tiers
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     */
     public static final RegistrySupplier<Item> AMETHYST_SHOVEL = registerBasicTool("amethyst_shovel", null, "vanilla_tiers/amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, 0, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> AMETHYST_HOE = registerBasicTool("amethyst_hoe", null, "vanilla_tiers/amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, -1, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, 2, -2.9f, (new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))));
@@ -110,7 +134,13 @@ public class AstralItems {
     public static final RegistrySupplier<Item> EMERALD_AXE = registerBasicTool("emerald_axe", null, "vanilla_tiers/emerald_axe", () -> new AxeItem(AstralToolTiers.EMERALD, 6, -3, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      * Blocks
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      */
     public static final RegistrySupplier<Item> SPIKES_IRON = register("spikes_iron", "Iron Spikes", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> SPIKES_CURSE = register("spikes_curse", "Cursed Spikes", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
@@ -118,10 +148,17 @@ public class AstralItems {
     public static final RegistrySupplier<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
-    //Shields (Basically just regular shields with more durability)
-    //A vanilla shield has 336 durability
-    private static final int VANILLA_SHIELD_DURABILITY = 336;
 
+    /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * Shield
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     */
+    private static final int VANILLA_SHIELD_DURABILITY = 336;
 
     //TODO: we added suppliers for materials because of Figure out net.minecraft.client.renderer.Sheets loaded too early, modded registry-based materials may not work correctly
     public static final RegistrySupplier<Item> SHIELD_LEATHER = registerShield("shield_leather", "Leather Shield", () -> new AstralShieldItem(
