@@ -1,4 +1,4 @@
-package org.lightning323.astral.shield;
+package org.lightning323.astral.item.shield;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

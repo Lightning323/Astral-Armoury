@@ -1,4 +1,4 @@
-package org.lightning323.astral.shield;
+package org.lightning323.astral.item.shield;
 
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;

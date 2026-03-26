@@ -9,7 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.lightning323.astral.AstralArmoury;
 import org.lightning323.astral.GlowHelmet;
-import org.lightning323.astral.shield.AstralShieldItem;
+import org.lightning323.astral.item.shield.AstralShieldItem;
+import org.lightning323.astral.item.sword.LightningSwordItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,7 +42,22 @@ public class AstralItems {
     /**
      * Broadswords
      */
-    public static final RegistrySupplier<Item> CLAYMORE = registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> LIGHTS_BANE = registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+
+
+
+    /**
+     * Staffs
+     */
+    public static final RegistrySupplier<Item> FROST_STAFF = registerBasicTool("frost_staff", null, "swords/frost_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> AQUA_STAFF = registerBasicTool("aqua_staff", null, "swords/aqua_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_STAFF = registerBasicTool("emerald_staff", null, "swords/emerald_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerBasicTool("diamond_staff", null, "swords/diamond_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningSwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
 
     //Glow helmet
     public static final RegistrySupplier<Item> GLOW_HELMET = registerArmor("glowing_helmet", () -> new GlowHelmet(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
@@ -53,6 +69,17 @@ public class AstralItems {
     public static final RegistrySupplier<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, 2, -2.9f, (new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))));
     public static final RegistrySupplier<Item> AMETHYST_PICKAXE = registerBasicTool("amethyst_pickaxe", null, "vanilla_tiers/amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, 1, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
     public static final RegistrySupplier<Item> AMETHYST_AXE = registerBasicTool("amethyst_axe", null, "vanilla_tiers/amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, 4, -2.9f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    /**
+     * Cactus tier
+     */
+    public static final RegistrySupplier<Item> CACTUS_SWORD = registerBasicTool("cactus_sword", null, "vanilla_tiers/cactus_sword", () -> new SwordItem(AstralToolTiers.CACTUS, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    public static final RegistrySupplier<Item> CACTUS_BOOTS = registerArmor("cactus_boots", null, "vanilla_tiers/cactus_boots", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> CACTUS_HELMET = registerArmor("cactus_helmet", null, "vanilla_tiers/cactus_helmet", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.HELMET, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> CACTUS_CHESTPLATE = registerArmor("cactus_chestplate", null, "vanilla_tiers/cactus_chestplate", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> CACTUS_LEGGINGS = registerArmor("cactus_leggings", null, "vanilla_tiers/cactus_leggings", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
 
     /**
      * Copper tier (1.20.1 - 1.21.9 only)

@@ -3,12 +3,11 @@ package org.lightning323.astral.registries;
 import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import org.lightning323.astral.AstralArmoury;
-import org.lightning323.astral.shield.ModShieldDecorationRecipe;
+import org.lightning323.astral.item.shield.ModShieldDecorationRecipe;
 
 public class AstralRecipes {
     // FIX: Change Registrar type from Item to RecipeSerializer

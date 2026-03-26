@@ -38,6 +38,17 @@ public enum AstralArmorMaterials implements ArmorMaterial {
             0F, // knockback resistance
             () -> Ingredient.of(Items.COPPER_INGOT)), // repair material
 
+    CACTUS_ARMOR("cactus", 5, // durability (5 = leather; 15= armor)
+            new int[]{ArmorMaterials.IRON.getDefenseForType(ArmorItem.Type.HELMET),// helmet
+                    5,// chestplate
+                    ArmorMaterials.IRON.getDefenseForType(ArmorItem.Type.LEGGINGS),// leggings
+                    ArmorMaterials.IRON.getDefenseForType(ArmorItem.Type.BOOTS), // boots
+            }, 6, // enchantability
+            SoundEvents.ARMOR_EQUIP_GENERIC, // equip sound
+            0F, // toughness
+            0F, // knockback resistance
+            () -> Ingredient.of(Items.CACTUS)), // repair material
+
     //Emerald has iron protection but with a diamond durability, netherite toughness and higher enchantment value than any other armor
     EMERALD_ARMOR("emerald", 33, // durability (33= diamond; 37 = netherite)
             new int[]{ // protection

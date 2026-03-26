@@ -4,7 +4,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import org.lightning323.astral.registries.AstralItems;
 import org.lightning323.astral.registries.AstralRecipes;
 
@@ -20,7 +19,7 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> writer) {
         // Simple 1.20.1 Recipe for your Claymore
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AstralItems.CLAYMORE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, AstralItems.LIGHTS_BANE.get())
             .pattern("I")
             .pattern("I")
             .pattern("S")

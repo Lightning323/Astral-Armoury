@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.lightning323.astral.registries.*;
-import org.lightning323.astral.shield.ShieldMaterialHandler;
+import org.lightning323.astral.item.shield.ShieldMaterialHandler;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;

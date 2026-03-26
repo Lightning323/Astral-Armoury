@@ -1,4 +1,4 @@
-package org.lightning323.astral.shield;
+package org.lightning323.astral.item.shield;
 
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
