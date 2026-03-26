@@ -26,6 +26,8 @@ allprojects {
             name = "Curios"
             url = uri("https://maven.theillusivec4.top/")
         }
+        //https://github.com/The-Aether-Team/Nitrogen
+        maven { url = "https://packages.aether-mod.net/Nitrogen" }
     }
 }
 

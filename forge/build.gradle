@@ -65,7 +65,14 @@ dependencies {
 ////    modImplementation("curse.maven:lionfish-api-1001614:5922047")
 //    modImplementation("curse.maven:mowzies-mobs-250498:6586086")
 //    modImplementation("curse.maven:deeperdarker-659011:5906086")
-    modImplementation("curse.maven:aether-255308:6134920")
+
+
+//    modImplementation("curse.maven:aether-255308:6134920")
+//    modImplementation("com.aetherteam.nitrogen:nitrogen_internals:${nitrogen_version}")
+//    forgeRuntimeLibrary("com.aetherteam.nitrogen:nitrogen_internals:${nitrogen_version}") {
+//        jarJar.ranged(it, "[${project.nitrogen_version},)")
+//        jarJar.pin(it, "${project.nitrogen_version}")
+//    }
 }
 
 processResources {
