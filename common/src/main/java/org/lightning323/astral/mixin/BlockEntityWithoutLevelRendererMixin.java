@@ -36,7 +36,7 @@ public class BlockEntityWithoutLevelRendererMixin {
             cancellable = true
     )
     private void myMod$renderCustomShield(ItemStack itemStack, ItemDisplayContext context, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay, CallbackInfo ci) {
-        if (itemStack.is(ModItems.SHIELD_LEATHER.get())) {
+        if (itemStack.getItem() instanceof ShieldItem) {//itemStack.is(ModItems.SHIELD_LEATHER.get())
             AstralShieldRenderer.render(shieldModel, itemStack, poseStack, buffer, packedLight, packedOverlay);
             ci.cancel();
         }

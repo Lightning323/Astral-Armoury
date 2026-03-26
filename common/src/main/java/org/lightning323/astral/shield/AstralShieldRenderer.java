@@ -5,10 +5,8 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ShieldModel;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -38,7 +36,7 @@ public class AstralShieldRenderer extends BlockEntityWithoutLevelRenderer {
         boolean bl = BlockItem.getBlockEntityData(itemStack) != null;
         poseStack.pushPose();
         poseStack.scale(1.0F, -1.0F, -1.0F);
-        Material material = MaterialShieldRegistry.getMaterial(itemStack, bl); //Shield base vs nopattern shield
+        Material material = ShieldMaterialHandler.getMaterial((AstralShieldItem) itemStack.getItem(), bl); //Shield base vs nopattern shield
 
         VertexConsumer vertexConsumer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(
                 multiBufferSource,
