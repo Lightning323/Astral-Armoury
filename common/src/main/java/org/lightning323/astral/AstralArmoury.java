@@ -33,31 +33,9 @@ public final class AstralArmoury {
         return new ResourceLocation(MOD_ID, emeraldBoots);
     }
 
-    public static void setupClient() {
-        MaterialShieldRegistry.init();
-
-
-            // 1. Register Item Properties (for the pulling animation)
-            ItemPropertiesRegistry.register(ModItems.SHIELD_LEATHER.get(), new ResourceLocation("pull"),
-                    (stack, level, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
-
-            ItemPropertiesRegistry.register(ModItems.SHIELD_LEATHER.get(), new ResourceLocation("pulling"),
-                    (stack, level, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
-
-//
-//          // This makes sure the shield isn't "empty" or a flat white square
-//            ItemRendererRegistry.registerRenderer(ModItems.SHIELD_LEATHER.get(), (stack, matrices, vertexConsumer, light, overlay) -> {
-//                // You call your custom shield renderer here
-//                AstralShieldRenderer.render(stack, matrices, vertexConsumer, light, overlay);
-//            });
-
-
-    }
-
     public static AstralShieldRenderer shieldRenderer;
 
-    public static void onRegisterReloadListener() {
-
-
+    public static void setupClient() {
+        MaterialShieldRegistry.init();
     }
 }

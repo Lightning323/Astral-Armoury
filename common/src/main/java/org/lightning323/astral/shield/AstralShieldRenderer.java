@@ -4,17 +4,22 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ShieldModel;
+import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.Material;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import org.lightning323.astral.shield.MaterialShieldRegistry;
 
-public class AstralShieldRenderer {
+public class AstralShieldRenderer extends BlockEntityWithoutLevelRenderer {
     private static ShieldModel SHIELD_MODEL;
+
+    public AstralShieldRenderer(BlockEntityRenderDispatcher blockEntityRenderDispatcher, EntityModelSet entityModelSet) {
+        super(blockEntityRenderDispatcher, entityModelSet);
+    }
 
     public static void render(ItemStack stack, PoseStack ps, MultiBufferSource buffer, int light, int overlay) {
         // Initialize model if null (Architectury doesn't provide the EMS directly here)
