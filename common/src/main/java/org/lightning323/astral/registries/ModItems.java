@@ -24,16 +24,32 @@ public class ModItems {
     );
 
 
-    public static final RegistrySupplier<Item> EMERALD_BOOTS = ITEMS.<Item>register(AstralArmoury.resource("emerald_boots"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_HELMET = ITEMS.<Item>register(AstralArmoury.resource("emerald_helmet"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = ITEMS.<Item>register(AstralArmoury.resource("emerald_chestplate"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = ITEMS.<Item>register(AstralArmoury.resource("emerald_leggings"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistrySupplier<Item> EMERALD_BOOTS = ITEMS.<Item>register(AstralArmoury.resource("emerald_boots"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_HELMET = ITEMS.<Item>register(AstralArmoury.resource("emerald_helmet"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_CHESTPLATE = ITEMS.<Item>register(AstralArmoury.resource("emerald_chestplate"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_LEGGINGS = ITEMS.<Item>register(AstralArmoury.resource("emerald_leggings"), () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
-    public static final RegistrySupplier<Item> EMERALD_SHOVEL = ITEMS.<Item>register(AstralArmoury.resource("emerald_shovel"), () -> new ShovelItem(MyCustomTiers.EMERALD, 1, -2.8f, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_HOE = ITEMS.<Item>register(AstralArmoury.resource("emerald_hoe"), () -> new HoeItem(MyCustomTiers.EMERALD, -1, -3, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_SWORD = ITEMS.<Item>register(AstralArmoury.resource("emerald_sword"), () -> new SwordItem(MyCustomTiers.EMERALD, 5, -2.1f, (new Item.Properties())));
-    public static final RegistrySupplier<Item> EMERALD_PICKAXE = ITEMS.<Item>register(AstralArmoury.resource("emerald_pickaxe"), () -> new PickaxeItem(MyCustomTiers.EMERALD, 1, -2.8f, new Item.Properties()));
-    public static final RegistrySupplier<Item> EMERALD_AXE = ITEMS.<Item>register(AstralArmoury.resource("emerald_axe"), () -> new AxeItem(MyCustomTiers.EMERALD, 6, -3, new Item.Properties()));
+    public static final RegistrySupplier<Item> EMERALD_SHOVEL = ITEMS.<Item>register(AstralArmoury.resource("emerald_shovel"), () -> new ShovelItem(MyCustomTiers.EMERALD, 1, -2.8f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_HOE = ITEMS.<Item>register(AstralArmoury.resource("emerald_hoe"), () -> new HoeItem(MyCustomTiers.EMERALD, -1, -3, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_SWORD = ITEMS.<Item>register(AstralArmoury.resource("emerald_sword"), () -> new SwordItem(MyCustomTiers.EMERALD, 5, -2.1f, (new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))));
+    public static final RegistrySupplier<Item> EMERALD_PICKAXE = ITEMS.<Item>register(AstralArmoury.resource("emerald_pickaxe"), () -> new PickaxeItem(MyCustomTiers.EMERALD, 1, -2.8f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> EMERALD_AXE = ITEMS.<Item>register(AstralArmoury.resource("emerald_axe"), () -> new AxeItem(MyCustomTiers.EMERALD, 6, -3, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+
+    //Shields (Basically just regular shields with more durability)
+    //A vanilla shield has 336 durability
+    private static final int VANILLA_SHIELD_DURABILITY = 336;
+
+    public static final RegistrySupplier<Item> SHIELD_LEATHER = ITEMS.<Item>register(AstralArmoury.resource("shield_leather"), () -> new ShieldItem(
+            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB)
+    ));
+
+    public static final RegistrySupplier<Item> SHIELD_OBSIDIAN = ITEMS.<Item>register(AstralArmoury.resource("shield_obsidian"), () -> new ShieldItem(
+            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB)
+    ));
+
+    public static final RegistrySupplier<Item> SHIELD_NETHERITE = ITEMS.<Item>register(AstralArmoury.resource("shield_netherite"), () -> new ShieldItem(
+            new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB)
+    ));
 
 
     // 3. The init method called by platform-specific loaders

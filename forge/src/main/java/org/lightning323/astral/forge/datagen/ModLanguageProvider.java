@@ -14,13 +14,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        // Items
         addItem(ModItems.CLAYMORE, "Claymore");
-        
-        // Creative Tabs (The key must match your Component.translatable)
-        add("itemGroup." + AstralArmoury.MOD_ID + ".test_tab", "Astral Armoury");
-        
-        // You can also add generic strings or subtitles
+        add("itemGroup." + AstralArmoury.MOD_ID + ".main", "Astral Armoury");
         add("tooltip.astral.heavy", "Slow but deadly.");
     }
 }
