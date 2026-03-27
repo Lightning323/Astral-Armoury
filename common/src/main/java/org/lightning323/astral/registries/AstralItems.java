@@ -162,20 +162,20 @@ public class AstralItems {
 
     //TODO: we added suppliers for materials because of Figure out net.minecraft.client.renderer.Sheets loaded too early, modded registry-based materials may not work correctly
     public static final RegistrySupplier<Item> SHIELD_LEATHER = registerShield("shield_leather", "Leather Shield", () -> new AstralShieldItem(
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base")),
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/leather_base_nopattern")),
+          "entity/shield/leather_base",
+          "entity/shield/leather_base_nopattern",
             new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 2)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
     public static final RegistrySupplier<Item> SHIELD_OBSIDIAN = registerShield("shield_obsidian", "Obsidian Shield", () -> new AstralShieldItem(
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/obsidian_base")),
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/obsidian_base_nopattern")),
+          "entity/shield/obsidian_base",
+          "entity/shield/obsidian_base_nopattern",
             new Item.Properties().durability((int) (VANILLA_SHIELD_DURABILITY * 8)).arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
     public static final RegistrySupplier<Item> SHIELD_NETHERITE = registerShield("shield_netherite", "Netherite Shield", () -> new AstralShieldItem(
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base")),
-            () -> new Material(Sheets.SHIELD_SHEET, new ResourceLocation(MOD_ID, "entity/shield/netherite_base_nopattern")),
+          "entity/shield/netherite_base",
+          "entity/shield/netherite_base_nopattern",
             new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB))
     );
 
