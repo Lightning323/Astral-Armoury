@@ -39,10 +39,10 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ public class AstralItems {
 //    public static final RegistrySupplier<Item> AQUA_STAFF = registerBasicTool("aqua_staff", null, "swords/aqua_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 //    public static final RegistrySupplier<Item> EMERALD_STAFF = registerBasicTool("emerald_staff", null, "swords/emerald_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 //    public static final RegistrySupplier<Item> DIAMOND_STAFF = registerBasicTool("diamond_staff", null, "swords/diamond_staff", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-    public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningStaffItem(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+//    public static final RegistrySupplier<Item> LIGHTNING_STAFF = registerBasicTool("lightning_staff", null, "swords/lightning_staff", () -> new LightningStaffItem(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
