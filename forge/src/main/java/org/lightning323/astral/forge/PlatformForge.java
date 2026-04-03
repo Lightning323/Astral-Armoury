@@ -3,6 +3,7 @@ package org.lightning323.astral.forge;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraftforge.common.ForgeMod;
 import org.lightning323.astral.Platform;
+import org.lightning323.astral.forge.effects.EffectRegistry;
 
 import java.util.function.Supplier;
 
