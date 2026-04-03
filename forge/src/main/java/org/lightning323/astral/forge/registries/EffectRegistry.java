@@ -1,4 +1,4 @@
-package org.lightning323.astral.forge.effects;
+package org.lightning323.astral.forge.registries;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -8,6 +8,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.lightning323.astral.forge.effects.EmptyMobEffect;
+import org.lightning323.astral.forge.effects.FreezeEffect;
 
 import java.awt.*;
 

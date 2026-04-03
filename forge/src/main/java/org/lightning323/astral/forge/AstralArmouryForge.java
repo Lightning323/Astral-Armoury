@@ -1,17 +1,23 @@
 package org.lightning323.astral.forge;
 
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.lightning323.astral.AstralArmoury;
-import org.lightning323.astral.forge.effects.EffectRegistry;
+import org.lightning323.astral.forge.registries.EffectRegistry;
+import org.lightning323.astral.forge.enchantments.StepEnchant;
+import org.lightning323.astral.forge.registries.EnchantmentRegistry;
+import org.lightning323.astral.forge.registries.PotionsRegistry;
 
 @Mod(AstralArmoury.MOD_ID)
 public final class AstralArmouryForge {
@@ -34,6 +40,7 @@ public final class AstralArmouryForge {
 
         PotionsRegistry.register(modEventBus);
         EffectRegistry.register(modEventBus);
+        EnchantmentRegistry.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -50,6 +57,5 @@ public final class AstralArmouryForge {
     @Mod.EventBusSubscriber(modid = AstralArmoury.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
     static class ClientForgeEvents {
     }
-
 
 }

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class FreezeEffect extends MobEffect {
-    protected FreezeEffect(MobEffectCategory pCategory, int pColor) {
+    public FreezeEffect(MobEffectCategory pCategory, int pColor) {
         super(pCategory, pColor);
         //This is the important part
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED,
