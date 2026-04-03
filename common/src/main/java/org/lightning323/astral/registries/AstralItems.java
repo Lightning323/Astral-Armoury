@@ -39,10 +39,10 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-//    public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-//    public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-//    public static final RegistrySupplier<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
-//    public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
+    public static final RegistrySupplier<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties().arch$tab(ModCreativeModeTabs.ASTRAL_TAB)));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
