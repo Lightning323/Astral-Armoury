@@ -17,5 +17,16 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add("itemGroup." + AstralArmoury.MOD_ID + ".main", "Astral Armoury");
         add("tooltip.astral.heavy", "Slow but deadly.");
+        add("item.minecraft.potion.effect.astral_reach_distance","Potion of Reach Distance");
+        add("item.minecraft.tipped_arrow.effect.astral_reach_distance","Arrow of Reach Distance");
+
+        add("item.minecraft.potion.effect.astral_blind","Potion of Blindness");
+        add("item.minecraft.tipped_arrow.effect.astral_blind","Arrow of Blindness");
+
+        add("item.minecraft.potion.effect.astral_freeze","Potion of Freeze");
+        add("item.minecraft.tipped_arrow.effect.astral_freeze","Arrow of Freeze");
+
+        add("item.minecraft.potion.effect.astral_attack_range","Potion of Attack Range");
+        add("item.minecraft.tipped_arrow.effect.astral_attack_range","Arrow of Attack Range");
     }
 }
