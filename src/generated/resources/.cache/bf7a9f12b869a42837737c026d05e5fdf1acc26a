@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-05T13:45:10.324730164	Item Models: astral
+// 1.21.1	2026-05-05T15:01:40.104908142	Item Models: astral
 d05b2305d911e5feb70681ef5b3992884ebd0bf3 assets/astral/models/item/amethyst_axe.json
 a7aa0f7ad6991d0da53b9f049b1f8703b32b57db assets/astral/models/item/amethyst_hoe.json
 a6ccbd1a2b7444eaff9f0c6498d96d51414f1964 assets/astral/models/item/amethyst_pickaxe.json
@@ -27,9 +27,6 @@ e86fe460438e11152dd846632002995044480837 assets/astral/models/item/copper_shovel
 282c71fad2f020e13b0811bcd0e3a47c7f695f13 assets/astral/models/item/emerald_pickaxe.json
 0f2dd601b58641ebd59dad5825be4a0b7a00f850 assets/astral/models/item/emerald_shovel.json
 a8cf4a944d5dc7efda9e5c9a9bce71bdd042553f assets/astral/models/item/emerald_sword.json
-30ca659513c4e4a824cdfc5456bca4fffdfb91ae assets/astral/models/item/gem_amethyst.json
-faeed13eae1d242b1c3acb7d38073206109098cc assets/astral/models/item/gem_prismarine.json
-8be30eb624814e365097d36d3dac1c2d41c49725 assets/astral/models/item/gold_snowflake.json
 9eb2cce876a3bacd0d22ad07ff73a9e5dad58223 assets/astral/models/item/lights_bane.json
 68b4203b19327166b7a52de37ca0a422774d381c assets/astral/models/item/shield_leather.json
 88d70ea319d7798c5c9e3b388bf0f855d9023c73 assets/astral/models/item/shield_leather_blocking.json
@@ -37,4 +34,3 @@ a3e94734f08ca6464e32ec57bad9d09a4578aa07 assets/astral/models/item/shield_nether
 7dec07106f5d2c867e3a93a01be219f9998d4799 assets/astral/models/item/shield_netherite_blocking.json
 cbc7f391f1abd7abbd6cf1c2f3b33dde4150da34 assets/astral/models/item/shield_obsidian.json
 385d06a02d2bbeebaa38938541e06ef2ac96a79a assets/astral/models/item/shield_obsidian_blocking.json
-71f4c90f273a5c4652717090b9ec06dd95666680 assets/astral/models/item/snowflake.json

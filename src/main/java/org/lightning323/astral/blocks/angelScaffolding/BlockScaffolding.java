@@ -59,34 +59,6 @@ public class BlockScaffolding extends Block {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (player.isShiftKeyDown() || stack.isEmpty()) {
-            return ItemInteractionResult.CONSUME;
-        }
-
-        Block heldBlock = Block.byItem(stack.getItem());
-
-        // Prevent infinite loop if trying to place more scaffolding
-        if (heldBlock != Blocks.AIR && !(heldBlock instanceof BlockScaffolding)) {
-            if (!level.isClientSide) {
-                level.destroyBlock(pos, true);
-
-                // Create a use context to place the new block where the scaffolding was
-                UseOnContext context = new UseOnContext(player, hand, hit);
-                InteractionResult result = stack.useOn(context);
-
-                if (result.consumesAction()) {
-                    return ItemInteractionResult.SUCCESS;
-                }
-            } else {
-                return ItemInteractionResult.SUCCESS;
-            }
-        }
-
-        return ItemInteractionResult.CONSUME;
-    }
-
-    @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
             // Horizontal collision check like ladders/vines

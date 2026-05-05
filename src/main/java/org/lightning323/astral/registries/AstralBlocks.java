@@ -23,8 +23,8 @@ public class AstralBlocks {
     public static final List<DeferredBlock<Block>> allBlocks = new ArrayList<>();
     public static final List<DeferredBlock<Block>> lootDropSelf = new ArrayList<>();
 
-    public static final DeferredBlock<Block> SCAFFOLD_FRAGILE = registerBlock("scaffold_fragile", () -> new BlockScaffolding( true));
-    public static final DeferredBlock<Block> SCAFFOLD_RESPONSIVE = registerBlock("scaffold_responsive", () -> new BlockScaffoldingResponsive());
+//    public static final DeferredBlock<Block> SCAFFOLD_FRAGILE = registerBlock("scaffold_fragile", () -> new BlockScaffolding( true));
+//    public static final DeferredBlock<Block> SCAFFOLD_RESPONSIVE = registerBlock("scaffold_responsive", () -> new BlockScaffoldingResponsive());
 
     public static final DeferredBlock<Block> SPIKES_IRON = registerBlock("spikes_iron", () -> new SpikesBlock(Block.Properties.of(), EnumSpikeType.PLAIN));
     public static final DeferredBlock<Block> SPIKES_FIRE = registerBlock("spikes_fire", () -> new SpikesBlock(Block.Properties.of(), EnumSpikeType.FIRE));

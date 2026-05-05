@@ -1,4 +1,6 @@
-// 1.21.1	2026-05-05T13:45:10.32755258	Recipes
+// 1.21.1	2026-05-05T15:01:02.383508711	Recipes
 600d1133a3a81bc3c58db3e095adbb33c1070ec9 data/astral/advancement/recipes/combat/lights_bane_smithing.json
+29aba3de226c8690e95006296cf6e2fdc85aa9f9 data/astral/advancement/recipes/combat/netherite_shield_smithing.json
 8ff911174d98dda47eb4774df6a068d1c6b8500f data/astral/recipe/lights_bane_smithing.json
+bad026ce8359a334481618560f0d70a0e89712a4 data/astral/recipe/netherite_shield_smithing.json
 cd15e66707ed3372288a58efe6cb2af620eea0b5 data/astral/recipe/shield_decoration.json

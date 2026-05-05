@@ -36,6 +36,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 // ResourceLocation.fromNamespaceAndPath is correct for 1.21.1
                 .save(output, ResourceLocation.fromNamespaceAndPath(MODID, "lights_bane_smithing"));
 
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), // Template
+                        Ingredient.of(Items.SHIELD),                      // Base Item
+                        Ingredient.of(Items.NETHERITE_INGOT),                         // Addition Material
+                        RecipeCategory.COMBAT,
+                        AstralItems.SHIELD_NETHERITE.get()                             // Result
+                )
+                .unlocks("has_netherite", has(Items.NETHERITE_INGOT))
+                // ResourceLocation.fromNamespaceAndPath is correct for 1.21.1
+                .save(output, ResourceLocation.fromNamespaceAndPath(MODID, "netherite_shield_smithing"));
+
         /*
          * Shield decoration recipe
          * Special recipes now use SpecialRecipeBuilder.special(serializer)
