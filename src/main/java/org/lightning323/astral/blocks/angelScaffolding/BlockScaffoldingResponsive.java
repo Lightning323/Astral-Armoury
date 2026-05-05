@@ -18,37 +18,7 @@ import net.minecraft.world.phys.BlockHitResult;
  */
 public class BlockScaffoldingResponsive extends BlockScaffolding {
 
-    public BlockScaffoldingResponsive(Properties properties, boolean autobreak) {
-        super(properties, autobreak);
-    }
-
-//    @Override
-//    public ItemInteractionResult useItemOn(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-//        //If we are crouching, place instead of replacing
-//        if (player.isCrouching()) return ItemInteractionResult.CONSUME;
-//
-//        //Replace a block that is placed in it
-//        ItemStack heldItem = player.getItemInHand(hand);
-//        if (heldItem.isEmpty()) {
-//            return ItemInteractionResult.SUCCESS;
-//        }
-//        Block b = Block.byItem(heldItem.getItem());
-//        if (b != null && b != Blocks.AIR && !(b instanceof BlockScaffolding)
-//                && world.getBlockState(pos).getBlock() == this) {
-//            world.destroyBlock(pos, true);
-//            UseOnContext context = new UseOnContext(player, hand, hit);
-//            heldItem.useOn(context);
-//            return ItemInteractionResult.SUCCESS;
-//            //to cancel event chains
-//        }
-//        return ItemInteractionResult.CONSUME;
-//    }
-
-    @Override
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-        super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);
-        if (blockIn == this) {
-            worldIn.destroyBlock(pos, true);
-        }
+    public BlockScaffoldingResponsive() {
+        super(false);
     }
 }

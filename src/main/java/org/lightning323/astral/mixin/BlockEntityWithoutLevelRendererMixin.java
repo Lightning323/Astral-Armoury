@@ -28,8 +28,6 @@ public class BlockEntityWithoutLevelRendererMixin {
     @Shadow
     private ShieldModel shieldModel;
 
-    @Unique
-    private ShieldModel customShieldModel;
 
     @Inject(
             method = "renderByItem",
@@ -37,19 +35,22 @@ public class BlockEntityWithoutLevelRendererMixin {
             cancellable = true
     )
     private void myMod$renderCustomShield(ItemStack itemStack, ItemDisplayContext context, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay, CallbackInfo ci) {
-        if (itemStack.getItem() instanceof AstralShieldItem) {//itemStack.is(ModItems.SHIELD_LEATHER.get())
-            render(customShieldModel, itemStack, context, poseStack, buffer, packedLight, packedOverlay);
+        if (itemStack.getItem() instanceof AstralShieldItem shield) {//itemStack.is(ModItems.SHIELD_LEATHER.get())
+            render(shield, itemStack, poseStack, buffer, packedLight, packedOverlay);
             ci.cancel();
         }
     }
 
-    private void render(ShieldModel shieldModel, ItemStack p_108830_, ItemDisplayContext p_270899_, PoseStack p_108832_, MultiBufferSource p_108833_, int p_108834_, int p_108835_) {
+    private void render(AstralShieldItem shield, ItemStack p_108830_, PoseStack p_108832_, MultiBufferSource p_108833_, int p_108834_, int p_108835_) {
         BannerPatternLayers bannerpatternlayers = (BannerPatternLayers) p_108830_.getOrDefault(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY);
         DyeColor dyecolor = (DyeColor) p_108830_.get(DataComponents.BASE_COLOR);
         boolean flag = !bannerpatternlayers.layers().isEmpty() || dyecolor != null;
         p_108832_.pushPose();
         p_108832_.scale(1.0F, -1.0F, -1.0F);
-        Material material = flag ? ModelBakery.SHIELD_BASE : ModelBakery.NO_PATTERN_SHIELD;
+
+        Material material = flag ? shield.getBaseMaterial() : shield.getNoPatternMaterial();
+//        Material material = flag ? ModelBakery.SHIELD_BASE : ModelBakery.NO_PATTERN_SHIELD;
+
         VertexConsumer vertexconsumer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(p_108833_, shieldModel.renderType(material.atlasLocation()), true, p_108830_.hasFoil()));
         shieldModel.handle().render(p_108832_, vertexconsumer, p_108834_, p_108835_);
         if (flag) {

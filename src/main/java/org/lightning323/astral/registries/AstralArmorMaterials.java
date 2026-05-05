@@ -45,7 +45,7 @@ public class AstralArmorMaterials {
             createMap(2, 5, 7, 2),
             35, 0.25F, 0.2F,
             () -> Items.EMERALD_BLOCK,
-            AstralSounds.EQUIP_EMERALD
+            SoundEvents.ARMOR_EQUIP_GENERIC
     );
 
     // 🔹 Helper: clean stat map

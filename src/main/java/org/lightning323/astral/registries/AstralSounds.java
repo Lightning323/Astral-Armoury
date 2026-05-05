@@ -12,27 +12,26 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.Level;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.lightning323.astral.Astral;
 
 import java.util.function.Supplier;
 
-public class AstralSounds {
-    public static final String MOD_ID = "astral"; // Replace with your actual MOD_ID variable
+import static org.lightning323.astral.Astral.MODID;
 
-    // In 1.21, we use DeferredRegister
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
+public class AstralSounds {
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, MODID);
 
     public static final Holder<SoundEvent> SPIKES_ON = SOUND_EVENTS.register("spikes_on",
-            () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "spikes_on")));
+            () -> SoundEvent.createVariableRangeEvent(Astral.resource( "spikes_on")));
 
     public static final Holder<SoundEvent> SPIKES_OFF = SOUND_EVENTS.register("spikes_off",
-            () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "spikes_off")));
-
-    public static final Holder<SoundEvent> EQUIP_EMERALD = SOUND_EVENTS.register("equip_emerald",
-            () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "equip_emerald")));
+            () -> SoundEvent.createVariableRangeEvent(Astral.resource( "spikes_off")));
 
     // Make sure to call this in your main Mod constructor: AstralSounds.SOUND_EVENTS.register(bus);
-    public static void register() {
+    public static void register(IEventBus bus) {
+        SOUND_EVENTS.register(bus);
     }
 
     public static void playSoundAtBlock(Level world, Entity player, BlockPos pos, SoundEvent soundIn) {

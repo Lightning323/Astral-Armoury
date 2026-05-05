@@ -32,8 +32,8 @@ public class BlockScaffolding extends Block {
 
     private final boolean doesAutobreak;
 
-    public BlockScaffolding(Properties properties, boolean autobreak) {
-        super(properties.strength(0.1F).randomTicks().noOcclusion().sound(SoundType.SCAFFOLDING));
+    public BlockScaffolding( boolean autobreak) {
+        super(Block.Properties.of().strength(0.1F).randomTicks().noOcclusion().sound(SoundType.SCAFFOLDING));
         this.doesAutobreak = autobreak;
     }
 
@@ -59,7 +59,7 @@ public class BlockScaffolding extends Block {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (player.isShiftKeyDown() || stack.isEmpty()) {
             return ItemInteractionResult.CONSUME;
         }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/shield_blocking",
+  "textures": {
+    "particle": "astral:item/shield_leather"
+  }
+}

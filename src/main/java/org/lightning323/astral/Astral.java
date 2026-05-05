@@ -28,10 +28,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.logging.impl.WeakHashtable;
-import org.lightning323.astral.registries.AstralBlocks;
-import org.lightning323.astral.registries.AstralItems;
-import org.lightning323.astral.registries.AstralRecipes;
-import org.lightning323.astral.registries.AstralToolTiers;
+import org.lightning323.astral.registries.*;
 import org.slf4j.Logger;
 
 import java.util.HashMap;
@@ -57,6 +54,7 @@ public class Astral {
         AstralItems.register(modEventBus);
         AstralBlocks.register(modEventBus);
         AstralRecipes.register(modEventBus);
+        AstralSounds.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
@@ -71,9 +69,11 @@ public class Astral {
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             addItems(AstralItems.armor, event);
             addItems(AstralItems.tools, event);
+            addItems(AstralItems.shields,event);
         } else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             addItems(AstralItems.basicItems, event);
             addItems(AstralItems.tools, event);
+            addBlocks(AstralBlocks.allBlocks, event);
 //            event.accept(AstralItems.SNOWFLAKE);
         }
     }
@@ -87,6 +87,12 @@ public class Astral {
 //        }
 //    }
 
+    private void addBlocks(List<DeferredBlock<Block>> items, BuildCreativeModeTabContentsEvent event) {
+        for (DeferredBlock<Block> item : items) {
+            event.accept(item);
+        }
+    }
+
     private void addItems(List<DeferredItem<Item>> items, BuildCreativeModeTabContentsEvent event) {
         for (DeferredItem<Item> item : items) {
             event.accept(item);
@@ -96,16 +102,6 @@ public class Astral {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-    }
-
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-//            ShieldMaterialHandler.init();
-        }
     }
 
     public static ResourceLocation resource(String loc) {

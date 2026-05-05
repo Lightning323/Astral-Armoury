@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "c c",
+    "c c"
+  ],
+  "key": {
+  	"c": {
+  		"item":"minecraft:cactus"
+  	}
+  },
+  "result": {
+    "item": "astral:cactus_boots",
+    "count": 1
+  }
+}

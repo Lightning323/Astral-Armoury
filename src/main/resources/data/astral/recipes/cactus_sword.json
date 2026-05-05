@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " c ",
+    " c ",
+    " w "
+  ],
+  "key": {
+    "c": {
+      "item": "minecraft:cactus"
+    },
+    "w": {
+      "item": "minecraft:wooden_sword"
+    }
+  },
+  "result": {
+    "item": "astral:cactus_sword",
+    "count": 1
+  }
+}

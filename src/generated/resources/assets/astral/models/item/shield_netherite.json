@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/shield",
+  "overrides": [
+    {
+      "model": "astral:item/shield_netherite_blocking",
+      "predicate": {
+        "minecraft:blocking": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "particle": "astral:item/shield_netherite"
+  }
+}
