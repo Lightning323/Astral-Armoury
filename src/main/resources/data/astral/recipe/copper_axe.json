@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-	"cc ",
+    "cc ",
     "cd ",
     " d "
   ],
   "key": {
-  	"d": {
-  		"item":"minecraft:stick"
-  	},
-  	"c": {
-  		"tag":"forge:ingots/copper"
-  	}
+    "d": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    }
   },
   "result": {
     "id": "astral:copper_axe",
