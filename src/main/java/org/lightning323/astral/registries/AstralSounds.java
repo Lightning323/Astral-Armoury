@@ -22,13 +22,13 @@ public class AstralSounds {
     // In 1.21, we use DeferredRegister
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
 
-    public static final Supplier<SoundEvent> SPIKES_ON = SOUND_EVENTS.register("spikes_on",
+    public static final Holder<SoundEvent> SPIKES_ON = SOUND_EVENTS.register("spikes_on",
             () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "spikes_on")));
 
-    public static final Supplier<SoundEvent> SPIKES_OFF = SOUND_EVENTS.register("spikes_off",
+    public static final Holder<SoundEvent> SPIKES_OFF = SOUND_EVENTS.register("spikes_off",
             () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "spikes_off")));
 
-    public static final Supplier<SoundEvent> EQUIP_EMERALD = SOUND_EVENTS.register("equip_emerald",
+    public static final Holder<SoundEvent> EQUIP_EMERALD = SOUND_EVENTS.register("equip_emerald",
             () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MOD_ID, "equip_emerald")));
 
     // Make sure to call this in your main Mod constructor: AstralSounds.SOUND_EVENTS.register(bus);

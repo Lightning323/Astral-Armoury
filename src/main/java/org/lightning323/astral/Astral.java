@@ -44,7 +44,7 @@ public class Astral {
     public static final String MODID = "astral";
     public static final Logger LOG = LogUtils.getLogger();
 
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+
 
     // Creates a new Block with the id "astral:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));

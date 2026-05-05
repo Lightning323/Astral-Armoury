@@ -34,10 +34,10 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties();
-    public static final DeferredItem<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties();
-    public static final DeferredItem<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties();
-    public static final DeferredItem<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties();
+    public static final DeferredItem<Item> SNOWFLAKE = registerBasicItem("snowflake", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_SNOWFLAKE = registerBasicItem("gold_snowflake", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GEM_PRISMARINE = registerBasicItem("gem_prismarine", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GEM_AMETHYST = registerBasicItem("gem_amethyst", () -> new Item(new Item.Properties()));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,8 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> LIGHTS_BANE = registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties();
+    public static final DeferredItem<Item> LIGHTS_BANE =
+            registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, new Item.Properties()));
 //    public static final Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties();
 //    public static final Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties();
 
@@ -81,50 +82,50 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> AMETHYST_SHOVEL = registerBasicTool("amethyst_shovel", null, "vanilla_tiers/amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, 0, -2.9f, new Item.Properties();
-    public static final DeferredItem<Item> AMETHYST_HOE = registerBasicTool("amethyst_hoe", null, "vanilla_tiers/amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, -1, -2.9f, new Item.Properties();
-    public static final DeferredItem<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, 2, -2.9f, (new Item.Properties());
-    public static final DeferredItem<Item> AMETHYST_PICKAXE = registerBasicTool("amethyst_pickaxe", null, "vanilla_tiers/amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, 1, -2.9f, new Item.Properties();
-    public static final DeferredItem<Item> AMETHYST_AXE = registerBasicTool("amethyst_axe", null, "vanilla_tiers/amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, 4, -2.9f, new Item.Properties();
+    public static final DeferredItem<Item> AMETHYST_SHOVEL = registerBasicTool("amethyst_shovel", null, "vanilla_tiers/amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+    public static final DeferredItem<Item> AMETHYST_HOE = registerBasicTool("amethyst_hoe", null, "vanilla_tiers/amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+    public static final DeferredItem<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+    public static final DeferredItem<Item> AMETHYST_PICKAXE = registerBasicTool("amethyst_pickaxe", null, "vanilla_tiers/amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+    public static final DeferredItem<Item> AMETHYST_AXE = registerBasicTool("amethyst_axe", null, "vanilla_tiers/amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
 
     /**
      * Cactus tier
      */
-    public static final DeferredItem<Item> CACTUS_SWORD = registerBasicTool("cactus_sword", null, "vanilla_tiers/cactus_sword", () -> new SwordItem(AstralToolTiers.CACTUS, 6, -3.2f, new Item.Properties();
+    public static final DeferredItem<Item> CACTUS_SWORD = registerBasicTool("cactus_sword", null, "vanilla_tiers/cactus_sword", () -> new SwordItem(AstralToolTiers.CACTUS, new Item.Properties()));
 
-    public static final DeferredItem<Item> CACTUS_BOOTS = registerArmor("cactus_boots", null, "vanilla_tiers/cactus_boots", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties();
-    public static final DeferredItem<Item> CACTUS_HELMET = registerArmor("cactus_helmet", null, "vanilla_tiers/cactus_helmet", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.HELMET, new Item.Properties();
-    public static final DeferredItem<Item> CACTUS_CHESTPLATE = registerArmor("cactus_chestplate", null, "vanilla_tiers/cactus_chestplate", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties();
-    public static final DeferredItem<Item> CACTUS_LEGGINGS = registerArmor("cactus_leggings", null, "vanilla_tiers/cactus_leggings", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties();
+    public static final DeferredItem<Item> CACTUS_BOOTS = registerArmor("cactus_boots", null, "vanilla_tiers/cactus_boots", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final DeferredItem<Item> CACTUS_HELMET = registerArmor("cactus_helmet", null, "vanilla_tiers/cactus_helmet", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> CACTUS_CHESTPLATE = registerArmor("cactus_chestplate", null, "vanilla_tiers/cactus_chestplate", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<Item> CACTUS_LEGGINGS = registerArmor("cactus_leggings", null, "vanilla_tiers/cactus_leggings", () -> new ArmorItem(AstralArmorMaterials.CACTUS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
 
     /**
      * Copper tier (1.20.1 - 1.21.9 only)
      */
-    public static final DeferredItem<Item> COPPER_SHOVEL = registerBasicTool("copper_shovel", null, "vanilla_tiers/copper_shovel", () -> new ShovelItem(AstralToolTiers.COPPER, 1, -2.8f, new Item.Properties();
-    public static final DeferredItem<Item> COPPER_HOE = registerBasicTool("copper_hoe", null, "vanilla_tiers/copper_hoe", () -> new HoeItem(AstralToolTiers.COPPER, -1, -2f, new Item.Properties();
-    public static final DeferredItem<Item> COPPER_SWORD = registerBasicTool("copper_sword", null, "vanilla_tiers/copper_sword", () -> new SwordItem(AstralToolTiers.COPPER, 3, -2.4f, (new Item.Properties());
-    public static final DeferredItem<Item> COPPER_PICKAXE = registerBasicTool("copper_pickaxe", null, "vanilla_tiers/copper_pickaxe", () -> new PickaxeItem(AstralToolTiers.COPPER, 1, -2.8f, new Item.Properties();
-    public static final DeferredItem<Item> COPPER_AXE = registerBasicTool("copper_axe", null, "vanilla_tiers/copper_axe", () -> new AxeItem(AstralToolTiers.COPPER, 7, -3.4f, new Item.Properties();
+    public static final DeferredItem<Item> COPPER_SHOVEL = registerBasicTool("copper_shovel", null, "vanilla_tiers/copper_shovel", () -> new ShovelItem(AstralToolTiers.COPPER, new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_HOE = registerBasicTool("copper_hoe", null, "vanilla_tiers/copper_hoe", () -> new HoeItem(AstralToolTiers.COPPER, new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_SWORD = registerBasicTool("copper_sword", null, "vanilla_tiers/copper_sword", () -> new SwordItem(AstralToolTiers.COPPER, (new Item.Properties())));
+    public static final DeferredItem<Item> COPPER_PICKAXE = registerBasicTool("copper_pickaxe", null, "vanilla_tiers/copper_pickaxe", () -> new PickaxeItem(AstralToolTiers.COPPER, new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_AXE = registerBasicTool("copper_axe", null, "vanilla_tiers/copper_axe", () -> new AxeItem(AstralToolTiers.COPPER, new Item.Properties()));
 
-    public static final DeferredItem<Item> COPPER_BOOTS = registerArmor("copper_boots", null, "vanilla_tiers/copper_boots", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties();
+    public static final DeferredItem<Item> COPPER_BOOTS = registerArmor("copper_boots", null, "vanilla_tiers/copper_boots", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static final DeferredItem<Item> COPPER_HELMET = registerArmor("copper_helmet", null, "vanilla_tiers/copper_helmet", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final DeferredItem<Item> COPPER_CHESTPLATE = registerArmor("copper_chestplate", null, "vanilla_tiers/copper_chestplate", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties();
-    public static final DeferredItem<Item> COPPER_LEGGINGS = registerArmor("copper_leggings", null, "vanilla_tiers/copper_leggings", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties();
+    public static final DeferredItem<Item> COPPER_CHESTPLATE = registerArmor("copper_chestplate", null, "vanilla_tiers/copper_chestplate", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_LEGGINGS = registerArmor("copper_leggings", null, "vanilla_tiers/copper_leggings", () -> new ArmorItem(AstralArmorMaterials.COPPER_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     /**
      * Emerald tier
      */
-    public static final DeferredItem<Item> EMERALD_BOOTS = registerArmor("emerald_boots", null, "vanilla_tiers/emerald_boots", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_HELMET = registerArmor("emerald_helmet", null, "vanilla_tiers/emerald_helmet", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_CHESTPLATE = registerArmor("emerald_chestplate", null, "vanilla_tiers/emerald_chestplate", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_LEGGINGS = registerArmor("emerald_leggings", null, "vanilla_tiers/emerald_leggings", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties();
+    public static final DeferredItem<Item> EMERALD_BOOTS = registerArmor("emerald_boots", null, "vanilla_tiers/emerald_boots", () -> new ArmorItem( AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_HELMET = registerArmor("emerald_helmet", null, "vanilla_tiers/emerald_helmet", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_CHESTPLATE = registerArmor("emerald_chestplate", null, "vanilla_tiers/emerald_chestplate", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_LEGGINGS = registerArmor("emerald_leggings", null, "vanilla_tiers/emerald_leggings", () -> new ArmorItem(AstralArmorMaterials.EMERALD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final DeferredItem<Item> EMERALD_SHOVEL = registerBasicTool("emerald_shovel", null, "vanilla_tiers/emerald_shovel", () -> new ShovelItem(AstralToolTiers.EMERALD, 1, -2.8f, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_HOE = registerBasicTool("emerald_hoe", null, "vanilla_tiers/emerald_hoe", () -> new HoeItem(AstralToolTiers.EMERALD, -1, -3, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_SWORD = registerBasicTool("emerald_sword", null, "vanilla_tiers/emerald_sword", () -> new SwordItem(AstralToolTiers.EMERALD, 5, -2.1f, (new Item.Properties());
-    public static final DeferredItem<Item> EMERALD_PICKAXE = registerBasicTool("emerald_pickaxe", null, "vanilla_tiers/emerald_pickaxe", () -> new PickaxeItem(AstralToolTiers.EMERALD, 1, -2.8f, new Item.Properties();
-    public static final DeferredItem<Item> EMERALD_AXE = registerBasicTool("emerald_axe", null, "vanilla_tiers/emerald_axe", () -> new AxeItem(AstralToolTiers.EMERALD, 6, -3, new Item.Properties();
+    public static final DeferredItem<Item> EMERALD_SHOVEL = registerBasicTool("emerald_shovel", null, "vanilla_tiers/emerald_shovel", () -> new ShovelItem(AstralToolTiers.EMERALD, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_HOE = registerBasicTool("emerald_hoe", null, "vanilla_tiers/emerald_hoe", () -> new HoeItem(AstralToolTiers.EMERALD, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_SWORD = registerBasicTool("emerald_sword", null, "vanilla_tiers/emerald_sword", () -> new SwordItem(AstralToolTiers.EMERALD, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_PICKAXE = registerBasicTool("emerald_pickaxe", null, "vanilla_tiers/emerald_pickaxe", () -> new PickaxeItem(AstralToolTiers.EMERALD, new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_AXE = registerBasicTool("emerald_axe", null, "vanilla_tiers/emerald_axe", () -> new AxeItem(AstralToolTiers.EMERALD, new Item.Properties()));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
@@ -135,9 +136,9 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> SPIKES_IRON = register("spikes_iron", "Iron Spikes", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties();
-    public static final DeferredItem<Item> SPIKES_CURSE = register("spikes_curse", "Cursed Spikes", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties();
-    public static final DeferredItem<Item> SPIKES_FIRE = register("spikes_fire", "Hot Spikes", () -> new BlockItem(AstralBlocks.SPIKES_FIRE.get(), new Item.Properties();
+    public static final DeferredItem<Item> SPIKES_IRON = register("spikes_iron", "Iron Spikes", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SPIKES_CURSE = register("spikes_curse", "Cursed Spikes", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SPIKES_FIRE = register("spikes_fire", "Hot Spikes", () -> new BlockItem(AstralBlocks.SPIKES_FIRE.get(), new Item.Properties()));
 //    public static final DeferredItem<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties();
 //    public static final DeferredItem<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties();
 
