@@ -2,6 +2,7 @@ package org.lightning323.astral.registries;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.lightning323.astral.Astral;
@@ -36,6 +37,7 @@ public class AstralBlocks {
         return register;
     }
 
-    public static void register() {
+    public static void register(IEventBus modEventBus) {
+        BLOCKS.register(modEventBus);
     }
 }

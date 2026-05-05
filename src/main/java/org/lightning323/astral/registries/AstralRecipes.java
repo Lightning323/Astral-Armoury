@@ -1,24 +1,25 @@
 package org.lightning323.astral.registries;
 
-import dev.architectury.registry.registries.Registrar;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
-import org.lightning323.astral.AstralArmoury;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import org.lightning323.astral.Astral;
 import org.lightning323.astral.item.shield.ModShieldDecorationRecipe;
 
 public class AstralRecipes {
-    // FIX: Change Registrar type from Item to RecipeSerializer
-    public static final Registrar<RecipeSerializer<?>> SERIALIZERS =
-            AstralArmoury.REGISTRIES.get().get(Registries.RECIPE_SERIALIZER);
+    // Use NeoForge DeferredRegister for 1.21.1
+    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
+            DeferredRegister.create(Registries.RECIPE_SERIALIZER, Astral.MODID);
 
-    // FIX: Use the SERIALIZERS registrar instead of RECIPES
-    public static final RegistrySupplier<RecipeSerializer<? extends CraftingRecipe>> SHIELD_DECORATION =
-            SERIALIZERS.<RecipeSerializer<? extends CraftingRecipe>>register(AstralArmoury.resource("shield_decoration"),
+    // In 1.21.1, CraftingBookCategory is often required in the constructor of special recipes
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ModShieldDecorationRecipe>> SHIELD_DECORATION =
+            SERIALIZERS.register("shield_decoration",
                     () -> new SimpleCraftingRecipeSerializer<>(ModShieldDecorationRecipe::new));
 
-    public static void register() {
+    public static void register(IEventBus eventBus) {
+        SERIALIZERS.register(eventBus);
     }
 }

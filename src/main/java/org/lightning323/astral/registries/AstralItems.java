@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
 
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.lightning323.astral.Astral;
@@ -241,7 +242,7 @@ public class AstralItems {
     }
 
     // 3. The init method called by platform-specific loaders
-    public static void register() {
-
+    public static void register(IEventBus modEventBus) {
+ITEMS.register(modEventBus);
     }
 }

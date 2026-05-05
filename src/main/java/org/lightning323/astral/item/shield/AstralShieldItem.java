@@ -6,26 +6,28 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ShieldItem;
+import org.lightning323.astral.Astral;
+
 import java.util.function.Supplier;
 
 //Items are singletons
 public class AstralShieldItem extends ShieldItem implements Equipable {
 
-    public static final ResourceLocation BLOCKING = new ResourceLocation("minecraft:blocking");
+    public static final ResourceLocation BLOCKING = ResourceLocation.parse("minecraft:blocking");
     private final String baseMaterialPath, noPatternMaterialPath;
     private Material base, noPattern;
 
     public Material getBaseMaterial() {
         //We can only make materials on client side and we shoudnt do this during datagen
         if (base == null) {
-            base = new Material(Sheets.SHIELD_SHEET, AstralArmoury.resource(baseMaterialPath));
+            base = new Material(Sheets.SHIELD_SHEET, Astral.resource(baseMaterialPath));
         }
         return base;
     }
 
     public Material getNoPatternMaterial() {
         if (noPattern == null) {
-            noPattern = new Material(Sheets.SHIELD_SHEET, AstralArmoury.resource(noPatternMaterialPath));
+            noPattern = new Material(Sheets.SHIELD_SHEET, Astral.resource(noPatternMaterialPath));
         }
         return noPattern;
     }

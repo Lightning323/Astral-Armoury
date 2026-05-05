@@ -7,7 +7,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import org.lightning323.astral.CommonClass;
+import org.lightning323.astral.Astral;
 
 import java.util.function.Supplier;
 
@@ -42,7 +42,7 @@ public enum AstralToolTiers implements Tier {
         this.enchantmentValue = enchantmentValue;
         this.repairIngredient = repairIngredient;
         // This fixes the BlockTags.create error:
-        this.tag = TagKey.create(Registries.BLOCK, CommonClass.resource(tagName));
+        this.tag = TagKey.create(Registries.BLOCK, Astral.resource(tagName));
     }
 
     @Override

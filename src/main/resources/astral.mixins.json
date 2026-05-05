@@ -4,8 +4,10 @@
   "package": "org.lightning323.astral.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "OptionInstanceMixin"
   ],
   "client": [
+    "BlockEntityWithoutLevelRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

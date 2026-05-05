@@ -6,10 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -31,9 +28,15 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.logging.impl.WeakHashtable;
+import org.lightning323.astral.registries.AstralBlocks;
+import org.lightning323.astral.registries.AstralItems;
+import org.lightning323.astral.registries.AstralRecipes;
+import org.lightning323.astral.registries.AstralToolTiers;
 import org.slf4j.Logger;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.PriorityQueue;
 import java.util.function.Supplier;
 
 import static org.lightning323.astral.registries.AstralItems.ITEMS;
@@ -44,23 +47,17 @@ public class Astral {
     public static final String MODID = "astral";
     public static final Logger LOG = LogUtils.getLogger();
 
+    public static HashMap<Supplier<Item>, String> itemTranslations = new HashMap<>();
+    public static HashMap<Supplier<Item>, String> translations = new HashMap<>();
 
-
-    // Creates a new Block with the id "astral:example_block", combining the namespace and path
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "astral:example_block", combining the namespace and path
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
-    public static HashMap<Supplier<Item>, String> itemTranslations;
-
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Astral(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
+        AstralItems.register(modEventBus);
+        AstralBlocks.register(modEventBus);
+        AstralRecipes.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -72,7 +69,27 @@ public class Astral {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            addItems(AstralItems.armor, event);
+            addItems(AstralItems.tools, event);
+        } else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            addItems(AstralItems.basicItems, event);
+            addItems(AstralItems.tools, event);
+//            event.accept(AstralItems.SNOWFLAKE);
+        }
+    }
 
+//    private void addItems(List<DeferredItem<Item>> items, Item after, BuildCreativeModeTabContentsEvent event) {
+//        ItemStack prev = new ItemStack(after);
+//        for (DeferredItem<Item> item : items) {
+//            ItemStack i = item.toStack();
+//            event.insertAfter(prev, i, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+//            prev = i;
+//        }
+//    }
+
+    private void addItems(List<DeferredItem<Item>> items, BuildCreativeModeTabContentsEvent event) {
+        for (DeferredItem<Item> item : items) {
+            event.accept(item);
         }
     }
 
