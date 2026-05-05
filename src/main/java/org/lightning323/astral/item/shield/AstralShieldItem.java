@@ -6,8 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ShieldItem;
-import org.lightning323.astral.AstralArmoury;
-
 import java.util.function.Supplier;
 
 //Items are singletons

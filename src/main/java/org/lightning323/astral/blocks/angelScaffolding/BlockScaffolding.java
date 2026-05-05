@@ -64,27 +64,27 @@ public class BlockScaffolding extends Block {
         }
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        //If we are crouching, place instead of replacing
-        if (player.isCrouching()) return super.use(state, world, pos, player, hand, hit);
-
-        //Replace a block that is placed in it
-        ItemStack heldItem = player.getItemInHand(hand);
-        if (heldItem.isEmpty()) {
-            return InteractionResult.SUCCESS;
-        }
-        Block b = Block.byItem(heldItem.getItem());
-        if (b != null && b != Blocks.AIR && !(b instanceof BlockScaffolding)
-                && world.getBlockState(pos).getBlock() == this) {
-            world.destroyBlock(pos, true);
-            UseOnContext context = new UseOnContext(player, hand, hit);
-            heldItem.useOn(context);
-            return InteractionResult.SUCCESS;
-            //to cancel event chains
-        }
-        return InteractionResult.PASS;
-    }
+//    @Override
+//    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+//        //If we are crouching, place instead of replacing
+//        if (player.isCrouching()) return super.use(state, world, pos, player, hand, hit);
+//
+//        //Replace a block that is placed in it
+//        ItemStack heldItem = player.getItemInHand(hand);
+//        if (heldItem.isEmpty()) {
+//            return InteractionResult.SUCCESS;
+//        }
+//        Block b = Block.byItem(heldItem.getItem());
+//        if (b != null && b != Blocks.AIR && !(b instanceof BlockScaffolding)
+//                && world.getBlockState(pos).getBlock() == this) {
+//            world.destroyBlock(pos, true);
+//            UseOnContext context = new UseOnContext(player, hand, hit);
+//            heldItem.useOn(context);
+//            return InteractionResult.SUCCESS;
+//            //to cancel event chains
+//        }
+//        return InteractionResult.PASS;
+//    }
 
     @Override
     public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {

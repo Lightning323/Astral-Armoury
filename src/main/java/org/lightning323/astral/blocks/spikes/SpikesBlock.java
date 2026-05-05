@@ -137,7 +137,7 @@ public class SpikesBlock extends Block implements SimpleWaterloggedBlock {
 
       if (!world.isClientSide) {
         var sound = shouldBeActive ? AstralSounds.SPIKES_ON : AstralSounds.SPIKES_OFF;
-        AstralSounds.playSoundFromServer((ServerLevel) world, pos, sound);
+        AstralSounds.playSoundFromServer((ServerLevel) world, pos, sound.get());
       }
     }
     // No need for super.neighborChanged here for basic blocks,

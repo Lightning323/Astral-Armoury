@@ -1,31 +1,37 @@
 package org.lightning323.astral.item.shield;
 
-import dev.architectury.registry.item.ItemPropertiesRegistry;
-import dev.architectury.registry.registries.RegistrySupplier;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.item.Item;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.lightning323.astral.registries.AstralItems;
 
-@Environment(EnvType.CLIENT)
+import java.util.function.Supplier;
+
+import static org.lightning323.astral.Astral.MODID;
+
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ShieldMaterialHandler {
 
-    public static void init() {
-        //this matches up with ShieldCyclicItem where it calls startUsingItem() inside of use()
-        ClampedItemPropertyFunction blockFn = (stack, world, entity, seed) ->
-                entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F;
-
-        for (RegistrySupplier<Item> shield : AstralItems.shields) {
-            ItemPropertiesRegistry.register(
-                    shield.get(), AstralShieldItem.BLOCKING, blockFn
-            );
-        }
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            for (Supplier<? extends Item> shield : AstralItems.shields) {
+                ItemProperties.register(
+                        shield.get(),
+                        // Ensure AstralShieldItem.BLOCKING is a ResourceLocation e.g., ResourceLocation.withDefaultNamespace("blocking")
+                        AstralShieldItem.BLOCKING,
+                        (stack, world, entity, seed) ->
+                                entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
+                );
+            }
+        });
     }
 
     public static Material getMaterial(AstralShieldItem item, boolean isBanner) {
-//        Material rendermaterial = isBanner ? ModelBakery.SHIELD_BASE : ModelBakery.NO_PATTERN_SHIELD; //Default values
         return isBanner ? item.getBaseMaterial() : item.getNoPatternMaterial();
     }
 }
