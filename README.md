@@ -60,6 +60,11 @@ Its a late game item or mid-tier (You must beat at least one boss to unlock it)
 Instead of gating a 3x3 miner behind a boss, make a boss drop a unique catalyst or infinite power core that scales or automates high-tier factory components.
 The boss drop, makes more efficient fuel usage, faster mining speed or something like that
 
+## Crafting stick
+To make this balanced, it may demand 5 (or 9) slots of active inventory space just to use it.
+It has limited crafting durability
+Its expensive (but a bossfight or two could make it easier to obtain in the future)
+
 ### Jetpacks (balanced)
 1. it requires lots of fuel
 2. It's slower than elytra and cant take you as high
