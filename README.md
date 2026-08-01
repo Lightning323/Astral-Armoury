@@ -30,8 +30,7 @@ Mojang actually prototyped this in Jeb's unreleased Combat Tests (Combat Snapsho
 Very powerful weapons could be powerful to use but at the cost of requiring more skill to use
 
 
-Powerful ranged weapons:
-
+### Powerful ranged weapons:
 1. The Greatbow / Siege Bow (Heavy Impact & Precision)
    - The Power: Hits like a truck. It pierces through multiple enemies, knocks heavy mobs back, and deals massive damage capable of chunking bosses or armored targets.
    - The Skill Floor (Drawbacks):
@@ -53,7 +52,31 @@ Powerful ranged weapons:
     Skillshot Detonation: The player must press right-click a second time mid-flight to manually detonate the projectile right next to targets for maximum splash damage (similar to a air-burst detonation).
 
 
-Jetpacks (balanced)
+### 3x3 mining tool
+Its cost: It requires energy or fuel to use
+Its a late game item or mid-tier (You must beat at least one boss to unlock it)
+
+## Integrating bosses into mods like create
+Instead of gating a 3x3 miner behind a boss, make a boss drop a unique catalyst or infinite power core that scales or automates high-tier factory components.
+The boss drop, makes more efficient fuel usage, faster mining speed or something like that
+
+### Jetpacks (balanced)
 1. it requires lots of fuel
 2. It's slower than elytra and cant take you as high
 3. It's only obtainable after an elytra
+
+## What should this mod focus on?
+Adding 50 new swords or 10 new ranged weapons doesn't fix Minecraft's problems—it just adds more noise on top of a broken foundation. If the underlying loop of acquiring, maintaining, and fighting with gear feels tedious or outdated, new weapons just become new chores.
+That being said Once the base gear loop is solid, special gear doesn't need to be overpowered to be cool. A Jetpack doesn't need to outrun an Elytra—it just needs a distinct fuel economy and vertical hover control for building and tactical combat positioning.
+
+## Cataclysm
+1. Standalone / Vanilla+ Gameplay: Loved and Balanced
+   When played in a lightly modded environment or alongside vanilla, Cataclysm’s rewards—like the Infernal Forge, Gauntlet of Guard, Void Forge, or Meat Shredder—are widely praised:
+
+High Visual & Mechanical Flair: Players love that these aren't just generic sword reskins with inflated damage numbers. They feature unique abilities, ground-slams, projectile attacks, and distinct animations that feel like actual boss weapons from games like Elden Ring or Monster Hunter.
+Appropriate Power Spike: Relative to Vanilla Netherite or Dragon-level progression, acquiring a Cataclysm weapon feels like a massive power surge that justifies the brutal, multi-phase boss fights.
+Niche Utility Over Flat DPS: A weapon shouldn't just hit hard—it should do something unique (e.g., granting mobility, breaking guard shields, or offering crowd-control) so it stays useful even if another weapon deals more raw damage.
+
+It shifts the game away from pure sandbox building toward a structured, boss-centric RPG progression loop. However, instead of flooding you with hundreds of linear weapon variants like Terraria does, Cataclysm translates that loop into Minecraft's 3D engine by focusing on quality over sheer volume.
+
+
