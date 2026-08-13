@@ -28,6 +28,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.logging.impl.WeakHashtable;
+import org.lightning323.astral.event.PlayerDeathHandler;
 import org.lightning323.astral.registries.*;
 import org.slf4j.Logger;
 
@@ -57,6 +58,7 @@ public class Astral {
         AstralSounds.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(PlayerDeathHandler.class);
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

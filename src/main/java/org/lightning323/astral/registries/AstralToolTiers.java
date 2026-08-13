@@ -16,8 +16,8 @@ public enum AstralToolTiers implements Tier {
     COPPER(200, Tiers.IRON.getSpeed(), 1.0F, 8,
             () -> Ingredient.of(Items.COPPER_INGOT), "needs_copper_tool"),
 
-    AMETHYST(1000, Tiers.IRON.getSpeed(), Tiers.STONE.getAttackDamageBonus(), 26,
-            () -> Ingredient.of(Items.AMETHYST_SHARD), "needs_amethyst_tool"),
+//    AMETHYST(1000, Tiers.IRON.getSpeed(), Tiers.STONE.getAttackDamageBonus(), 26,
+//            () -> Ingredient.of(Items.AMETHYST_SHARD), "needs_amethyst_tool"),
 
     EMERALD((int) (Tiers.DIAMOND.getUses() * 0.75f), 12.0F, 0.0F, 15,
             () -> Ingredient.of(Items.EMERALD), "needs_emerald_tool"),

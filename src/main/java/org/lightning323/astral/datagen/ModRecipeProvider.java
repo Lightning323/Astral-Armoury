@@ -25,16 +25,16 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         // Smithing Transform Recipe
         // Note: The structure remains largely the same, but we pass 'output' instead of 'writer'
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), // Template
-                        Ingredient.of(Items.NETHERITE_SWORD),                      // Base Item
-                        Ingredient.of(Items.NETHER_STAR),                         // Addition Material
-                        RecipeCategory.COMBAT,
-                        AstralItems.LIGHTS_BANE.get()                             // Result
-                )
-                .unlocks("has_nether_star", has(Items.NETHER_STAR))
-                // ResourceLocation.fromNamespaceAndPath is correct for 1.21.1
-                .save(output, ResourceLocation.fromNamespaceAndPath(MODID, "lights_bane_smithing"));
+//        SmithingTransformRecipeBuilder.smithing(
+//                        Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), // Template
+//                        Ingredient.of(Items.NETHERITE_SWORD),                      // Base Item
+//                        Ingredient.of(Items.NETHER_STAR),                         // Addition Material
+//                        RecipeCategory.COMBAT,
+//                        AstralItems.LIGHTS_BANE.get()                             // Result
+//                )
+//                .unlocks("has_nether_star", has(Items.NETHER_STAR))
+//                // ResourceLocation.fromNamespaceAndPath is correct for 1.21.1
+//                .save(output, ResourceLocation.fromNamespaceAndPath(MODID, "lights_bane_smithing"));
 
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), // Template

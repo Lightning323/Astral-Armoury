@@ -35,5 +35,10 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add("item.minecraft.potion.effect.astral_attack_range", "Potion of Attack Range");
         add("item.minecraft.tipped_arrow.effect.astral_attack_range", "Arrow of Attack Range");
+
+        //Enchantments
+        add("enchantment.astral.soulbound","Soulbound");
+        add("enchantment.astral.soulbound.description","Grants the ability to keep items after death.");
+
     }
 }

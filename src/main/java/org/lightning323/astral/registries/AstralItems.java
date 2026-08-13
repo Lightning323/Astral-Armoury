@@ -49,8 +49,8 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> LIGHTS_BANE =
-            registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, new Item.Properties()));
+//    public static final DeferredItem<Item> LIGHTS_BANE =
+//            registerBasicTool("lights_bane", "Light's Bane", "swords/lights_bane", () -> new SwordItem(Tiers.IRON, new Item.Properties()));
 //    public static final Item> PALLADUM_SWORD = registerBasicTool("palladum_sword", null, "swords/palladium_sword", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties();
 //    public static final Item> DARK_LANCE = registerBasicTool("dark_lance", null, "swords/dark_lance", () -> new SwordItem(Tiers.IRON, 6, -3.2f, new Item.Properties();
 
@@ -83,11 +83,11 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      */
-    public static final DeferredItem<Item> AMETHYST_SHOVEL = registerBasicTool("amethyst_shovel", null, "vanilla_tiers/amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, new Item.Properties()));
-    public static final DeferredItem<Item> AMETHYST_HOE = registerBasicTool("amethyst_hoe", null, "vanilla_tiers/amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
-    public static final DeferredItem<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, new Item.Properties()));
-    public static final DeferredItem<Item> AMETHYST_PICKAXE = registerBasicTool("amethyst_pickaxe", null, "vanilla_tiers/amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
-    public static final DeferredItem<Item> AMETHYST_AXE = registerBasicTool("amethyst_axe", null, "vanilla_tiers/amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+//    public static final DeferredItem<Item> AMETHYST_SHOVEL = registerBasicTool("amethyst_shovel", null, "vanilla_tiers/amethyst_shovel", () -> new ShovelItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+//    public static final DeferredItem<Item> AMETHYST_HOE = registerBasicTool("amethyst_hoe", null, "vanilla_tiers/amethyst_hoe", () -> new HoeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+//    public static final DeferredItem<Item> AMETHYST_SWORD = registerBasicTool("amethyst_sword", null, "vanilla_tiers/amethyst_sword", () -> new SwordItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+//    public static final DeferredItem<Item> AMETHYST_PICKAXE = registerBasicTool("amethyst_pickaxe", null, "vanilla_tiers/amethyst_pickaxe", () -> new PickaxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
+//    public static final DeferredItem<Item> AMETHYST_AXE = registerBasicTool("amethyst_axe", null, "vanilla_tiers/amethyst_axe", () -> new AxeItem(AstralToolTiers.AMETHYST, new Item.Properties()));
 
     /**
      * Cactus tier
