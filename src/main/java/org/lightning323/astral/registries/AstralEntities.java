@@ -7,7 +7,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.lightning323.astral.entity.neko.SlingshotProjectile;
-import org.lightning323.astral.entity.neko.TargetDummyEntity;
 import org.lightning323.astral.entity.neko.WildfireTridentEntity;
 
 import static org.lightning323.astral.Astral.MODID;
@@ -29,11 +28,6 @@ public class AstralEntities {
                     () -> EntityType.Builder.<WildfireTridentEntity>of(WildfireTridentEntity::new, MobCategory.MISC)
                             .sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
                             .build("wildfire_trident"));
-
-    public static final DeferredHolder<EntityType<?>, EntityType<TargetDummyEntity>> TARGET_DUMMY =
-            ENTITY_TYPES.register("target_dummy",
-                    () -> EntityType.Builder.of(TargetDummyEntity::new, MobCategory.MISC)
-                            .sized(0.5F, 1.975F).eyeHeight(1.7775F).clientTrackingRange(10).build("target_dummy"));
 
     public static void register(IEventBus modEventBus) {
         ENTITY_TYPES.register(modEventBus);

@@ -22,7 +22,6 @@ public class AstralClientSetup {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(AstralEntities.SLINGSHOT_PROJECTILE.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(AstralEntities.TARGET_DUMMY.get(), TargetDummyRenderer::new);
         event.registerEntityRenderer(AstralEntities.WILDFIRE_TRIDENT.get(), WildfireTridentRenderer::new);
     }
 

@@ -22,7 +22,6 @@ import org.lightning323.astral.item.neko.CrownTemplateItem;
 import org.lightning323.astral.item.neko.NetherHeartItem;
 import org.lightning323.astral.item.neko.SickleItem;
 import org.lightning323.astral.item.neko.SlingshotItem;
-import org.lightning323.astral.item.neko.TargetDummyItem;
 import org.lightning323.astral.item.neko.WildfireShieldItem;
 import org.lightning323.astral.item.neko.WildfireTridentItem;
 import org.lightning323.astral.item.shield.AstralShieldItem;
@@ -219,12 +218,6 @@ public class AstralItems {
             () -> new NetherHeartItem(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
     public static final DeferredItem<Item> CROWN_SMITHING_TEMPLATE = registerBasicItem("crown_smithing_template", "Crown Smithing Template", "crown_smithing_template",
             () -> new CrownTemplateItem(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
-
-    /**
-     * Target dummy spawner (Neko: places a training dummy entity).
-     */
-    public static final DeferredItem<Item> TARGET_DUMMY = registerBasicTool("target_dummy", "Target Dummy", "target_dummy",
-            () -> new TargetDummyItem(new Item.Properties().stacksTo(1)));
 
     /**
      * ----------------------------------------------------------------------------------------------------------------
