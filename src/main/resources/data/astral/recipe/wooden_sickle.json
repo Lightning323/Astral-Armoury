@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " XX",
+    "X X",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "id": "astral:wooden_sickle",
+    "count": 1
+  }
+}

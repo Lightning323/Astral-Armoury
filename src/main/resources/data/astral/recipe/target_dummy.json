@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SHS",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "H": {
+      "item": "minecraft:hay_block"
+    }
+  },
+  "result": {
+    "id": "astral:target_dummy",
+    "count": 1
+  }
+}

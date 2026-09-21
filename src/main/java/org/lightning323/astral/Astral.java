@@ -54,6 +54,7 @@ public class Astral {
 
         AstralItems.register(modEventBus);
         AstralBlocks.register(modEventBus);
+        AstralEntities.register(modEventBus);
         AstralRecipes.register(modEventBus);
         AstralSounds.register(modEventBus);
 

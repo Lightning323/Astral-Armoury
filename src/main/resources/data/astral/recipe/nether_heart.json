@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MIM",
+    "ISI",
+    "MIM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "id": "astral:nether_heart",
+    "count": 1
+  }
+}

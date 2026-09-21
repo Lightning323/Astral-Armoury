@@ -1,7 +1,12 @@
 package org.lightning323.astral.registries;
 
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +17,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.lightning323.astral.Astral;
+import org.lightning323.astral.item.neko.AnchorItem;
+import org.lightning323.astral.item.neko.CrownTemplateItem;
+import org.lightning323.astral.item.neko.NetherHeartItem;
+import org.lightning323.astral.item.neko.SickleItem;
+import org.lightning323.astral.item.neko.SlingshotItem;
+import org.lightning323.astral.item.neko.TargetDummyItem;
+import org.lightning323.astral.item.neko.WildfireShieldItem;
+import org.lightning323.astral.item.neko.WildfireTridentItem;
 import org.lightning323.astral.item.shield.AstralShieldItem;
 
 import static org.lightning323.astral.Astral.MODID;
@@ -132,6 +145,91 @@ public class AstralItems {
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
+     * Neko ports (weapons & defense tools from Neko's Fixed)
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     */
+
+    /**
+     * Anchor heavy weapon (Neko: 12 damage, -3.5 speed, +1.5 reach, 2500 durability).
+     */
+    public static final DeferredItem<Item> ANCHOR = registerBasicTool("anchor", "Anchor", "anchor",
+            () -> new AnchorItem(anchorProps().durability(2500)));
+
+    /**
+     * Slingshot ranged weapon (Neko: 384 durability, nugget/shard/clump ammo).
+     */
+    public static final DeferredItem<Item> SLINGSHOT = registerBasicTool("slingshot", "Slingshot", "slingshot",
+            () -> new SlingshotItem(new Item.Properties().durability(384)));
+
+    /**
+     * Sickles (Neko: dual-wield combo weapons, -2.4 speed, per-tier damage).
+     */
+    public static final DeferredItem<Item> WOODEN_SICKLE = registerBasicTool("wooden_sickle", "Wooden Sickle", null,
+            () -> new SickleItem(Tiers.WOOD, 1.0F, 9, new Item.Properties().durability(Tiers.WOOD.getUses())));
+    public static final DeferredItem<Item> STONE_SICKLE = registerBasicTool("stone_sickle", "Stone Sickle", null,
+            () -> new SickleItem(Tiers.STONE, 1.5F, 8, new Item.Properties().durability(Tiers.STONE.getUses())));
+    public static final DeferredItem<Item> COPPER_SICKLE = registerBasicTool("copper_sickle", "Copper Sickle", null,
+            () -> new SickleItem(AstralToolTiers.COPPER, 1.15F, 8, new Item.Properties().durability(AstralToolTiers.COPPER.getUses())));
+    public static final DeferredItem<Item> IRON_SICKLE = registerBasicTool("iron_sickle", "Iron Sickle", null,
+            () -> new SickleItem(Tiers.IRON, 2.0F, 8, new Item.Properties().durability(Tiers.IRON.getUses())));
+    public static final DeferredItem<Item> GOLDEN_SICKLE = registerBasicTool("golden_sickle", "Golden Sickle", null,
+            () -> new SickleItem(Tiers.GOLD, 3.0F, 7, new Item.Properties().durability(Tiers.GOLD.getUses())));
+    public static final DeferredItem<Item> DIAMOND_SICKLE = registerBasicTool("diamond_sickle", "Diamond Sickle", null,
+            () -> new SickleItem(Tiers.DIAMOND, 4.5F, 5, new Item.Properties().durability(Tiers.DIAMOND.getUses())));
+    public static final DeferredItem<Item> NETHERITE_SICKLE = registerBasicTool("netherite_sickle", "Netherite Sickle", null,
+            () -> new SickleItem(Tiers.NETHERITE, 5.0F, 5, new Item.Properties().durability(Tiers.NETHERITE.getUses()).fireResistant()));
+
+    /**
+     * Wildfire trident (Neko: 8 damage, -2.9 speed, 1000 durability, fire resistant).
+     */
+    public static final DeferredItem<Item> WILDFIRE_TRIDENT = registerBasicTool("wildfire_trident", "Wildfire Trident", "wildfire_trident",
+            () -> new WildfireTridentItem(weaponProps(8.0F, -2.9F)));
+
+    /**
+     * Turtle armor completion (Neko: chestplate, leggings and boots to go with
+     * the vanilla turtle helmet).
+     */
+    public static final DeferredItem<Item> TURTLE_CHESTPLATE = registerArmor("turtle_chestplate", "Turtle Shell", "turtle_chestplate",
+            () -> new ArmorItem(AstralArmorMaterials.TURTLE_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<Item> TURTLE_LEGGINGS = registerArmor("turtle_leggings", "Turtle Knee Pads", "turtle_leggings",
+            () -> new ArmorItem(AstralArmorMaterials.TURTLE_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final DeferredItem<Item> TURTLE_BOOTS = registerArmor("turtle_boots", "Turtle Flippers", "turtle_boots",
+            () -> new ArmorItem(AstralArmorMaterials.TURTLE_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    /**
+     * Crowns (Neko: helmet alternatives forged from vanilla helmets).
+     */
+    public static final DeferredItem<Item> COPPER_CROWN = registerArmor("copper_crown", "Copper Crown", "copper_crown",
+            () -> new ArmorItem(AstralArmorMaterials.COPPER_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> IRON_CROWN = registerArmor("iron_crown", "Iron Crown", "iron_crown",
+            () -> new ArmorItem(AstralArmorMaterials.IRON_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> GOLDEN_CROWN = registerArmor("golden_crown", "Golden Crown", "golden_crown",
+            () -> new ArmorItem(AstralArmorMaterials.GOLDEN_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> DIAMOND_CROWN = registerArmor("diamond_crown", "Diamond Crown", "diamond_crown",
+            () -> new ArmorItem(AstralArmorMaterials.DIAMOND_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<Item> NETHERITE_CROWN = registerArmor("netherite_crown", "Netherite Crown", "netherite_crown",
+            () -> new ArmorItem(AstralArmorMaterials.NETHERITE_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    /**
+     * Smithing ingredients (Neko: boss-drop / template for the wildfire and crown upgrades).
+     */
+    public static final DeferredItem<Item> NETHER_HEART = registerBasicItem("nether_heart", "Heart Of The Nether", "nether_heart",
+            () -> new NetherHeartItem(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final DeferredItem<Item> CROWN_SMITHING_TEMPLATE = registerBasicItem("crown_smithing_template", "Crown Smithing Template", "crown_smithing_template",
+            () -> new CrownTemplateItem(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+
+    /**
+     * Target dummy spawner (Neko: places a training dummy entity).
+     */
+    public static final DeferredItem<Item> TARGET_DUMMY = registerBasicTool("target_dummy", "Target Dummy", "target_dummy",
+            () -> new TargetDummyItem(new Item.Properties().stacksTo(1)));
+
+    /**
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
+     * ----------------------------------------------------------------------------------------------------------------
      * Blocks
      * ----------------------------------------------------------------------------------------------------------------
      * ----------------------------------------------------------------------------------------------------------------
@@ -172,6 +270,13 @@ public class AstralItems {
             "entity/shield/netherite_base",
             "entity/shield/netherite_base_nopattern",
             new Item.Properties())
+    );
+
+    /**
+     * Wildfire shield (Neko: netherite-grade shield, 336 durability, fire resistant).
+     */
+    public static final DeferredItem<Item> WILDFIRE_SHIELD = registerShield("wildfire_shield", "Wildfire Shield", () -> new WildfireShieldItem(
+            new Item.Properties().durability(336).fireResistant())
     );
 
     public static DeferredItem<Item> register(String id, Supplier<Item> itemSupplier) {
@@ -239,6 +344,30 @@ public class AstralItems {
         DeferredItem<Item> register = register(id, translation, itemSupplier);
         shields.add(register);
         return register;
+    }
+
+    private static Item.Properties weaponProps(float damage, float speed) {
+        ItemAttributeModifiers attributes = ItemAttributeModifiers.builder()
+                .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, damage,
+                        AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, speed,
+                        AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .build();
+        return new Item.Properties().component(DataComponents.ATTRIBUTE_MODIFIERS, attributes);
+    }
+
+    private static Item.Properties anchorProps() {
+        ItemAttributeModifiers attributes = ItemAttributeModifiers.builder()
+                .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, 12.0F,
+                        AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, -3.5F,
+                        AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ENTITY_INTERACTION_RANGE,
+                        new AttributeModifier(Astral.resource("anchor_reach"), 1.5,
+                                AttributeModifier.Operation.ADD_VALUE),
+                        EquipmentSlotGroup.MAINHAND)
+                .build();
+        return new Item.Properties().component(DataComponents.ATTRIBUTE_MODIFIERS, attributes);
     }
 
     // 3. The init method called by platform-specific loaders

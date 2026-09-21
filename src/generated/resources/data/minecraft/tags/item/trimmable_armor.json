@@ -11,6 +11,14 @@
     "astral:emerald_boots",
     "astral:emerald_helmet",
     "astral:emerald_chestplate",
-    "astral:emerald_leggings"
+    "astral:emerald_leggings",
+    "astral:turtle_chestplate",
+    "astral:turtle_leggings",
+    "astral:turtle_boots",
+    "astral:copper_crown",
+    "astral:iron_crown",
+    "astral:golden_crown",
+    "astral:diamond_crown",
+    "astral:netherite_crown"
   ]
 }

@@ -54,7 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/shield")))
                 .texture("particle", modLoc("item/" + name))
-                // In 1.21, predicates use ResourceLocation.parse or .fromNamespaceAndPath
+                // Matches vanilla's shield ("blocking" parses to the minecraft namespace).
                 .override()
                 .predicate(ResourceLocation.withDefaultNamespace("blocking"), 1)
                 .model(blockingModel)

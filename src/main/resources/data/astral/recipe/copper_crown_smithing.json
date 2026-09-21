@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "astral:crown_smithing_template"
+  },
+  "base": {
+    "item": "astral:copper_helmet"
+  },
+  "addition": {
+    "item": "astral:nether_heart"
+  },
+  "result": {
+    "id": "astral:copper_crown",
+    "count": 1
+  }
+}

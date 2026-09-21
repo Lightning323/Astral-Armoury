@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "astral:crown_smithing_template"
+  },
+  "base": {
+    "item": "minecraft:golden_helmet"
+  },
+  "addition": {
+    "item": "astral:nether_heart"
+  },
+  "result": {
+    "id": "astral:golden_crown",
+    "count": 1
+  }
+}

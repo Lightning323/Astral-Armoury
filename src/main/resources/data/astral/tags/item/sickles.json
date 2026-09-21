@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "astral:wooden_sickle",
+    "astral:stone_sickle",
+    "astral:copper_sickle",
+    "astral:iron_sickle",
+    "astral:golden_sickle",
+    "astral:diamond_sickle",
+    "astral:netherite_sickle"
+  ]
+}

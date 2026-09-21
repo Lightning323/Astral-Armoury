@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DGD",
+    "DHD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "H": {
+      "item": "astral:nether_heart"
+    }
+  },
+  "result": {
+    "id": "astral:crown_smithing_template",
+    "count": 1
+  }
+}

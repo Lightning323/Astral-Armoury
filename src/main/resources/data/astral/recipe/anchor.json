@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ABA",
+    " A ",
+    " S "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "B": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "astral:anchor",
+    "count": 1
+  }
+}

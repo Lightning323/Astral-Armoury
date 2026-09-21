@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "astral:nether_heart"
+  },
+  "base": {
+    "item": "minecraft:shield"
+  },
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "id": "astral:wildfire_shield",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "astral:item/slingshot_pulling_0",
+  "textures": {
+    "layer0": "astral:item/slingshot_pulling_2"
+  }
+}

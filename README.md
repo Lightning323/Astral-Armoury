@@ -4,11 +4,7 @@ Adds Terraria weapons, tools, armour and enchantments
 I aim to add weapons as close to the official list of weapons in terraria (https://terraria.fandom.com/wiki/Weapons)
 While maintaining balance with other mods add that their own weapons.
 
-## License
-Copyright (c) 2026
-All rights reserved.
-
-## Roadmap
+# Roadmap
 A few changes are needed to change Minecraft's core design philosophy of "items should be impermanent"
 1. Removal of anvil "too expensive" cap
    2. An upper limit of XP for expensive items (configurable)
