@@ -18,7 +18,7 @@ import java.util.List;
  *
  * <p>Neko drops it from the Wildfire boss (not ported: mobs are out of
  * scope); in Astral it is the smithing-template ingredient that upgrades
- * tridents and shields into their wildfire variants.</p>
+ * tridents and shields into their molten and infernal variants.</p>
  */
 public class NetherHeartItem extends Item {
     public NetherHeartItem(Properties settings) {
@@ -27,12 +27,12 @@ public class NetherHeartItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> lines, TooltipFlag flag) {
-        lines.add(Component.translatable("item.astral.smithing_template.wildfire_upgrade.upgrade")
+        lines.add(Component.translatable("item.astral.smithing_template.infernal_upgrade.upgrade")
                 .withStyle(net.minecraft.ChatFormatting.GRAY));
         lines.add(Component.literal(" "));
-        lines.add(Component.translatable("item.astral.smithing_template.wildfire_upgrade.applies_to")
+        lines.add(Component.translatable("item.astral.smithing_template.infernal_upgrade.applies_to")
                 .withStyle(net.minecraft.ChatFormatting.BLUE));
-        lines.add(Component.translatable("item.astral.smithing_template.wildfire_upgrade.ingredients")
+        lines.add(Component.translatable("item.astral.smithing_template.infernal_upgrade.ingredients")
                 .withStyle(net.minecraft.ChatFormatting.BLUE));
         super.appendHoverText(stack, context, lines, flag);
     }

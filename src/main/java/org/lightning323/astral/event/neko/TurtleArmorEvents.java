@@ -20,7 +20,10 @@ import net.minecraft.world.effect.MobEffects;
  * Turtle-armor set bonuses ported from Neko's {@code PlayerMixin}.
  *
  * <ul>
- *   <li>Turtle flippers (boots): Dolphin's Grace while on land.</li>
+ *   <li>Turtle flippers (boots): Dolphin's Grace while on land. The effect is
+ *       refreshed only every 5 seconds (100 ticks) instead of every tick to
+ *       cut per-player tick work; the 10-second effect duration still keeps
+ *       the buff applied continuously.</li>
  *   <li>Turtle knee pads (leggings): no underwater mining penalty while
  *       submerged.</li>
  *   <li>Vanilla turtle helmet: blocks mace smash attacks at the cost of helmet
@@ -32,9 +35,14 @@ import net.minecraft.world.effect.MobEffects;
  */
 @EventBusSubscriber(modid = Astral.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class TurtleArmorEvents {
+    private static final int BOOST_REFRESH_INTERVAL = 20 * 5;
+
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent.Post event) {
         if (!(event.getEntity() instanceof Player player) || player.level().isClientSide()) {
+            return;
+        }
+        if (player.tickCount % BOOST_REFRESH_INTERVAL != 0) {
             return;
         }
         if (player.onGround() && !player.isInWater()

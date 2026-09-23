@@ -1,14 +1,14 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "astral:item/wildfire_trident"
+    "layer0": "astral:item/molten_trident"
   },
   "overrides": [
     {
       "predicate": {
         "throwing": 1
       },
-      "model": "astral:item/wildfire_trident_in_hand"
+      "model": "astral:item/molten_trident_in_hand"
     }
   ]
 }

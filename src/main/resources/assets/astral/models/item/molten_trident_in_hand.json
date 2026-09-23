@@ -2,7 +2,7 @@
   "parent": "builtin/entity",
   "gui_light": "front",
   "textures": {
-    "particle": "astral:item/wildfire_trident"
+    "particle": "astral:item/molten_trident"
   },
   "display": {
     "thirdperson_righthand": {

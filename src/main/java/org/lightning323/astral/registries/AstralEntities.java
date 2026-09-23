@@ -6,8 +6,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.lightning323.astral.entity.neko.MoltenTridentEntity;
 import org.lightning323.astral.entity.neko.SlingshotProjectile;
-import org.lightning323.astral.entity.neko.WildfireTridentEntity;
 
 import static org.lightning323.astral.Astral.MODID;
 
@@ -23,11 +23,11 @@ public class AstralEntities {
                     () -> EntityType.Builder.<SlingshotProjectile>of(SlingshotProjectile::new, MobCategory.MISC)
                             .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("slingshot_projectile"));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<WildfireTridentEntity>> WILDFIRE_TRIDENT =
-            ENTITY_TYPES.register("wildfire_trident",
-                    () -> EntityType.Builder.<WildfireTridentEntity>of(WildfireTridentEntity::new, MobCategory.MISC)
+    public static final DeferredHolder<EntityType<?>, EntityType<MoltenTridentEntity>> MOLTEN_TRIDENT =
+            ENTITY_TYPES.register("molten_trident",
+                    () -> EntityType.Builder.<MoltenTridentEntity>of(MoltenTridentEntity::new, MobCategory.MISC)
                             .sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
-                            .build("wildfire_trident"));
+                            .build("molten_trident"));
 
     public static void register(IEventBus modEventBus) {
         ENTITY_TYPES.register(modEventBus);

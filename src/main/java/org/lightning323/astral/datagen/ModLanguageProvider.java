@@ -41,11 +41,11 @@ public class ModLanguageProvider extends LanguageProvider {
         add("enchantment.astral.soulbound.description","Grants the ability to keep items after death.");
 
         //Neko-ported smithing templates
-        add("item.astral.smithing_template.wildfire_upgrade.applies_to", "Shields & Tridents");
-        add("item.astral.smithing_template.wildfire_upgrade.ingredients", "Netherite Ingots");
-        add("item.astral.smithing_template.wildfire_upgrade.upgrade", "Wildfire Upgrade");
-        add("item.astral.smithing_template.wildfire_upgrade.base_slot_description", "Add shield or trident");
-        add("item.astral.smithing_template.wildfire_upgrade.addition_slot_description", "Add Netherite Ingot");
+        add("item.astral.smithing_template.infernal_upgrade.applies_to", "Shields & Tridents");
+        add("item.astral.smithing_template.infernal_upgrade.ingredients", "Netherite Ingots");
+        add("item.astral.smithing_template.infernal_upgrade.upgrade", "Infernal Upgrade");
+        add("item.astral.smithing_template.infernal_upgrade.base_slot_description", "Add shield or trident");
+        add("item.astral.smithing_template.infernal_upgrade.addition_slot_description", "Add Netherite Ingot");
         add("item.astral.smithing_template.crown.applies_to", "Helmets");
         add("item.astral.smithing_template.crown.ingredients", "Heart Of The Nether");
         add("item.astral.smithing_template.crown.upgrade", "Crown Upgrade");

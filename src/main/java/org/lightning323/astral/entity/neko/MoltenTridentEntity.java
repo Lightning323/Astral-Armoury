@@ -17,21 +17,21 @@ import org.lightning323.astral.item.neko.EnchantLevels;
 import org.lightning323.astral.registries.AstralItems;
 
 /**
- * Wildfire trident projectile ported from Neko's {@code WildfireTrident}.
+ * Molten trident projectile ported from Neko's {@code WildfireTrident}.
  *
  * <p>Extends vanilla {@link ThrownTrident} (damage, enchantments, pickup and
  * riptide-throw pipeline inherited) with Neko's identity layered on top:
- * flame trail, 3s ignition on hit, loyalty return and the wildfire pickup
- * item. Loyalty return is steered manually (like Neko) so the entity can keep
+ * flame trail, 3s ignition on hit, loyalty return and the molten pickup item.
+ * Loyalty return is steered manually (like Neko) so the entity can keep
  * its own {@link EntityType} — which is what lets it render with the unique
- * wildfire texture instead of the vanilla trident's.</p>
+ * molten texture instead of the vanilla trident's.</p>
  */
-public class WildfireTridentEntity extends ThrownTrident {
+public class MoltenTridentEntity extends ThrownTrident {
     private boolean dealtDamage = false;
     private int returnTimer = 0;
     private ItemStack weapon = ItemStack.EMPTY;
 
-    public WildfireTridentEntity(EntityType<WildfireTridentEntity> entityType, Level level) {
+    public MoltenTridentEntity(EntityType<MoltenTridentEntity> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -100,7 +100,7 @@ public class WildfireTridentEntity extends ThrownTrident {
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        return new ItemStack(AstralItems.WILDFIRE_TRIDENT.get());
+        return new ItemStack(AstralItems.MOLTEN_TRIDENT.get());
     }
 
     @Override

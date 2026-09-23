@@ -16,19 +16,19 @@ import net.minecraft.world.item.ItemStack;
 import org.lightning323.astral.Astral;
 
 /**
- * Renders the wildfire trident exactly like the vanilla trident's BEWLR path:
+ * Renders the molten trident exactly like the vanilla trident's BEWLR path:
  * the flat item sprite for GUI/ground/fixed contexts and the 3D
- * {@link TridentModel} (skinned with the unique wildfire texture) everywhere
+ * {@link TridentModel} (skinned with the unique molten texture) everywhere
  * else. The charge pose comes from the {@code in_hand} item model's display
  * transforms plus the vanilla {@code ItemInHandRenderer} spear animation, so
  * it matches the vanilla trident identically.
  */
-public class WildfireTridentItemRenderer extends BlockEntityWithoutLevelRenderer {
-    private static final ResourceLocation TEXTURE = Astral.resource("textures/entity/wildfire_trident.png");
+public class MoltenTridentItemRenderer extends BlockEntityWithoutLevelRenderer {
+    private static final ResourceLocation TEXTURE = Astral.resource("textures/entity/molten_trident.png");
 
     private TridentModel tridentModel;
 
-    public WildfireTridentItemRenderer() {
+    public MoltenTridentItemRenderer() {
         super(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
                 Minecraft.getInstance().getEntityModels());
     }
@@ -55,7 +55,7 @@ public class WildfireTridentItemRenderer extends BlockEntityWithoutLevelRenderer
     private void renderFlatSprite(ItemStack stack, ItemDisplayContext context, PoseStack poses,
                                   MultiBufferSource buffer, int packedLight, int packedOverlay) {
         BakedModel flat = Minecraft.getInstance().getModelManager().getModel(
-                ModelResourceLocation.inventory(Astral.resource("wildfire_trident")));
+                ModelResourceLocation.inventory(Astral.resource("molten_trident")));
         Minecraft.getInstance().getItemRenderer().render(stack, context, false, poses, buffer,
                 packedLight, packedOverlay, flat);
     }

@@ -2,13 +2,13 @@
   "parent": "minecraft:item/shield",
   "overrides": [
     {
-      "model": "astral:item/wildfire_shield_blocking",
+      "model": "astral:item/infernal_shield_blocking",
       "predicate": {
         "minecraft:blocking": 1.0
       }
     }
   ],
   "textures": {
-    "particle": "astral:item/wildfire_shield"
+    "particle": "astral:item/infernal_shield"
   }
 }

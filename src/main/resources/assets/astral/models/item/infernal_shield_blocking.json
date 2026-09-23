@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/shield_blocking",
   "textures": {
-    "particle": "astral:item/wildfire_shield"
+    "particle": "astral:item/infernal_shield"
   }
 }

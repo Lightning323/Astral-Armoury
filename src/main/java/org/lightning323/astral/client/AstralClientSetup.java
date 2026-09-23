@@ -22,7 +22,7 @@ public class AstralClientSetup {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(AstralEntities.SLINGSHOT_PROJECTILE.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(AstralEntities.WILDFIRE_TRIDENT.get(), WildfireTridentRenderer::new);
+        event.registerEntityRenderer(AstralEntities.MOLTEN_TRIDENT.get(), MoltenTridentRenderer::new);
     }
 
     @SubscribeEvent
@@ -42,7 +42,7 @@ public class AstralClientSetup {
                             entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
             // Mirrors vanilla's trident "throwing" property: 1.0 while charging so the
             // model swaps to the in-hand charge pose exactly like the trident does.
-            ItemProperties.register(AstralItems.WILDFIRE_TRIDENT.get(), ResourceLocation.parse("throwing"),
+            ItemProperties.register(AstralItems.MOLTEN_TRIDENT.get(), ResourceLocation.parse("throwing"),
                     (stack, level, entity, seed) ->
                             entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
         });

@@ -22,8 +22,8 @@ import org.lightning323.astral.item.neko.CrownTemplateItem;
 import org.lightning323.astral.item.neko.NetherHeartItem;
 import org.lightning323.astral.item.neko.SickleItem;
 import org.lightning323.astral.item.neko.SlingshotItem;
-import org.lightning323.astral.item.neko.WildfireShieldItem;
-import org.lightning323.astral.item.neko.WildfireTridentItem;
+import org.lightning323.astral.item.neko.InfernalShieldItem;
+import org.lightning323.astral.item.neko.MoltenTridentItem;
 import org.lightning323.astral.item.shield.AstralShieldItem;
 
 import static org.lightning323.astral.Astral.MODID;
@@ -181,10 +181,10 @@ public class AstralItems {
             () -> new SickleItem(Tiers.NETHERITE, 5.0F, 5, new Item.Properties().durability(Tiers.NETHERITE.getUses()).fireResistant()));
 
     /**
-     * Wildfire trident (Neko: 8 damage, -2.9 speed, 1000 durability, fire resistant).
+     * Molten trident (Neko: 8 damage, -2.9 speed, 1000 durability, fire resistant).
      */
-    public static final DeferredItem<Item> WILDFIRE_TRIDENT = registerBasicTool("wildfire_trident", "Wildfire Trident", "wildfire_trident",
-            () -> new WildfireTridentItem(weaponProps(8.0F, -2.9F)));
+    public static final DeferredItem<Item> MOLTEN_TRIDENT = registerBasicTool("molten_trident", "Molten Trident", "molten_trident",
+            () -> new MoltenTridentItem(weaponProps(8.0F, -2.9F)));
 
     /**
      * Turtle armor completion (Neko: chestplate, leggings and boots to go with
@@ -212,7 +212,7 @@ public class AstralItems {
             () -> new ArmorItem(AstralArmorMaterials.NETHERITE_CROWN_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
 
     /**
-     * Smithing ingredients (Neko: boss-drop / template for the wildfire and crown upgrades).
+     * Smithing ingredients (Neko: boss-drop / template for the infernal and crown upgrades).
      */
     public static final DeferredItem<Item> NETHER_HEART = registerBasicItem("nether_heart", "Heart Of The Nether", "nether_heart",
             () -> new NetherHeartItem(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
@@ -266,9 +266,10 @@ public class AstralItems {
     );
 
     /**
-     * Wildfire shield (Neko: netherite-grade shield, 336 durability, fire resistant).
+     * Infernal shield (Neko: netherite-grade shield, 336 durability, fire resistant,
+     * ignites attackers on contact).
      */
-    public static final DeferredItem<Item> WILDFIRE_SHIELD = registerShield("wildfire_shield", "Wildfire Shield", () -> new WildfireShieldItem(
+    public static final DeferredItem<Item> INFERNAL_SHIELD = registerShield("infernal_shield", "Infernal Shield", () -> new InfernalShieldItem(
             new Item.Properties().durability(336).fireResistant())
     );
 

@@ -22,24 +22,24 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.lightning323.astral.client.WildfireTridentItemRenderer;
-import org.lightning323.astral.entity.neko.WildfireTridentEntity;
+import org.lightning323.astral.client.MoltenTridentItemRenderer;
+import org.lightning323.astral.entity.neko.MoltenTridentEntity;
 import org.lightning323.astral.registries.AstralEntities;
 
 /**
- * Wildfire trident ported from Neko's {@code WildfireTridentItem}.
+ * Molten trident ported from Neko's {@code WildfireTridentItem}.
  *
  * <p>1.21.1 adaptations (Neko targets the newer spin-attack API):</p>
  * <ul>
- *   <li>Thrown entity is {@link WildfireTridentEntity} (a vanilla-pipeline
+ *   <li>Thrown entity is {@link MoltenTridentEntity} (a vanilla-pipeline
  *       {@code ThrownTrident} with flame trail + ignition).</li>
  *   <li>Riptide uses a look-vector dash (the auto spin attack needs newer
  *       enchantment effect hooks).</li>
  *   <li>Loyalty is honoured through the vanilla trident pipeline.</li>
  * </ul>
  */
-public class WildfireTridentItem extends Item implements ProjectileItem {
-    public WildfireTridentItem(Properties settings) {
+public class MoltenTridentItem extends Item implements ProjectileItem {
+    public MoltenTridentItem(Properties settings) {
         super(settings.rarity(Rarity.RARE).fireResistant().durability(1000));
     }
 
@@ -51,12 +51,12 @@ public class WildfireTridentItem extends Item implements ProjectileItem {
     @Override
     public void initializeClient(java.util.function.Consumer<net.neoforged.neoforge.client.extensions.common.IClientItemExtensions> consumer) {
         consumer.accept(new net.neoforged.neoforge.client.extensions.common.IClientItemExtensions() {
-            private WildfireTridentItemRenderer renderer;
+            private MoltenTridentItemRenderer renderer;
 
             @Override
             public net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 if (renderer == null) {
-                    renderer = new WildfireTridentItemRenderer();
+                    renderer = new MoltenTridentItemRenderer();
                 }
                 return renderer;
             }
@@ -127,8 +127,8 @@ public class WildfireTridentItem extends Item implements ProjectileItem {
             if (!player.hasInfiniteMaterials()) {
                 stack.shrink(1);
             }
-            WildfireTridentEntity trident =
-                    new WildfireTridentEntity(AstralEntities.WILDFIRE_TRIDENT.get(), level);
+            MoltenTridentEntity trident =
+                    new MoltenTridentEntity(AstralEntities.MOLTEN_TRIDENT.get(), level);
             trident.setOwner(player);
             trident.setPos(player.getX(), player.getEyeY() - 0.1D, player.getZ());
             trident.setWeapon(thrown);
@@ -147,8 +147,8 @@ public class WildfireTridentItem extends Item implements ProjectileItem {
     public Projectile asProjectile(Level level, Position pos, ItemStack stack, Direction direction) {
         ItemStack thrown = stack.copy();
         thrown.setCount(1);
-        WildfireTridentEntity trident =
-                new WildfireTridentEntity(AstralEntities.WILDFIRE_TRIDENT.get(), level);
+        MoltenTridentEntity trident =
+                new MoltenTridentEntity(AstralEntities.MOLTEN_TRIDENT.get(), level);
         trident.setPos(pos.x(), pos.y(), pos.z());
         trident.setWeapon(thrown);
         trident.pickup = AbstractArrow.Pickup.ALLOWED;
