@@ -17,6 +17,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.lightning323.astral.Astral;
+import org.lightning323.astral.blocks.angelScaffolding.ItemScaffolding;
 import org.lightning323.astral.item.neko.AnchorItem;
 import org.lightning323.astral.item.neko.CrownTemplateItem;
 import org.lightning323.astral.item.neko.NetherHeartItem;
@@ -231,8 +232,8 @@ public class AstralItems {
     public static final DeferredItem<Item> SPIKES_IRON = register("spikes_iron", "Iron Spikes", () -> new BlockItem(AstralBlocks.SPIKES_IRON.get(), new Item.Properties()));
     public static final DeferredItem<Item> SPIKES_CURSE = register("spikes_curse", "Cursed Spikes", () -> new BlockItem(AstralBlocks.SPIKES_CURSE.get(), new Item.Properties()));
     public static final DeferredItem<Item> SPIKES_FIRE = register("spikes_fire", "Hot Spikes", () -> new BlockItem(AstralBlocks.SPIKES_FIRE.get(), new Item.Properties()));
-//    public static final DeferredItem<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties()));
-//    public static final DeferredItem<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new BlockItem(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SCAFFOLD_FRAGILE = register("scaffold_fragile", "Fragile Angel Scaffolding", () -> new ItemScaffolding(AstralBlocks.SCAFFOLD_FRAGILE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SCAFFOLD_RESPONSIVE = register("scaffold_responsive", "Angel Scaffolding", () -> new ItemScaffolding(AstralBlocks.SCAFFOLD_RESPONSIVE.get(), new Item.Properties()));
 
 
     /**

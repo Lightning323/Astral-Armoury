@@ -1,4 +1,6 @@
-// 1.21.1	2026-05-05T15:01:02.382730909	Loot Tables
+// 1.21.1	2026-09-23T06:26:50.075998802	Loot Tables
+01d1a2a512b88140094ea49b40a26e5c9318716d data/astral/loot_table/blocks/scaffold_fragile.json
+1ca5e15bbf2f21fca94832c9d9dd98872cdd2568 data/astral/loot_table/blocks/scaffold_responsive.json
 1dc67177e7ce6c01ea1c6b75ba5b9e20c86c8663 data/astral/loot_table/blocks/spikes_curse.json
 419b779f007ebe51f6d22ead868a3d4cd7cbc4dc data/astral/loot_table/blocks/spikes_fire.json
 f4825240c34bd6bac3be75cdc3fc58a7ca3330a9 data/astral/loot_table/blocks/spikes_iron.json

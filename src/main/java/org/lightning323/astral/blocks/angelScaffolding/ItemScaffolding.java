@@ -1,16 +1,19 @@
 package org.lightning323.astral.blocks.angelScaffolding;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 
 public class ItemScaffolding extends BlockItem {
 
@@ -20,61 +23,25 @@ public class ItemScaffolding extends BlockItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level worldIn, Player player, InteractionHand hand) {
-        if (player.isCrouching()) {
-            // || worldIn.getBlockState(context.getPos()).isAir() == false) {
+        if (player.isCrouching()) {    //skip if sneaking
             return super.use(worldIn, player, hand);
         }
-        //NOT crouchign so this is the MID AIR PLACEMENT section
-        //skip if sneaking
-        BlockPos pos = player.blockPosition().above();
-        // at eye level
-        int direction = Mth.floor((player.getYRot() * 4F) / 360F + 0.5D) & 3;
-        //imported from my scaffolding spell https://github.com/PrinceOfAmber/CyclicMagic/blob/37ebb722378cbf940aa9cfb4fa99ce0e80127533/src/main/java/com/lothrazar/cyclicmagic/spell/SpellScaffolding.java
-        // -45 is up
-        // +45 is pitch down
-        // first; is it up or down?
-        boolean doHoriz = true;
-        //    Direction facing = Direction.UP;
-        if (player.getXRot() < -82) {
-            // really really up
-            doHoriz = false;
-            pos = pos.above().above();
-            //      facing = Direction.UP;
-        } else if (player.getXRot() > 82) {
-            // really really down
-            doHoriz = false;
-            pos = pos.below();
-            //      facing = Direction.DOWN;
-        } else if (player.getXRot() < -45) {
-            // angle is pretty high up. so offset up again
-            pos = pos.above();
-            //      facing = Direction.UP;
-            doHoriz = true;
-        } else if (player.getXRot() > 45) {
-            // you are angled down, so bring down from eye level
-            pos = pos.below();
-            //      facing = Direction.DOWN;
-            doHoriz = true;
-        }
-        // else doHoriz = true; stays
-        // if not, go by dir
-        if (doHoriz) {
-            if (direction == Direction.EAST.ordinal()) {
-                pos = pos.east();
-                //        facing = Direction.EAST;
-            }
-            if (direction == Direction.WEST.ordinal()) {
-                pos = pos.west();
-                //        facing = Direction.WEST;
-            }
-            if (direction == Direction.SOUTH.ordinal()) {
-                pos = pos.south();
-                //        facing = Direction.SOUTH;
-            }
-            if (direction == Direction.NORTH.ordinal()) {
-                pos = pos.north();
-                //        facing = Direction.NORTH;
-            }
+
+        double reach = Math.min(3.5,player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE));
+        Vec3 eye = player.getEyePosition();
+        Vec3 look = player.getLookAngle();
+
+        // Trace along the cursor so placement works in any direction
+        ClipContext clipContext = new ClipContext(eye, eye.add(look.scale(reach)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player);
+        BlockHitResult hit = worldIn.clip(clipContext);
+
+        BlockPos pos;
+        if (hit.getType() == HitResult.Type.BLOCK) {
+            // Cursor points at a block, so place next to the face being looked at
+            pos = hit.getBlockPos().relative(hit.getDirection());
+        } else {
+            // Cursor points into open air, so place at the end of the reach
+            pos = BlockPos.containing(eye.add(look.scale(reach)));
         }
         if (worldIn.isClientSide == false && worldIn.isEmptyBlock(pos)) {
             ItemStack stac = player.getItemInHand(hand);
